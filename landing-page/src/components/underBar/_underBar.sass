@@ -1,0 +1,23 @@
+div.underBar
+    +flex
+    position: absolute
+    width: 100%
+    top: 60px
+    left: 0
+    height: 45px
+    background-color: $light-green
+    color: $green
+    z-index: 1
+    // display: hidden
+    div.circle
+        position: relative
+        margin: 10px
+        height: 16px
+        width: 16px
+        background-color: $green
+        border-radius: 50%
+        div.checked
+            +bg-image(5px, 7.5px, './../assets/checked.png')
+            +center
+    p
+        font-size: 14px

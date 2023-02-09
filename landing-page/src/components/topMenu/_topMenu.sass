@@ -1,0 +1,25 @@
+@import '../underBar/_underBar'
+
+div.topMenu
+    +flex
+    height: 60px
+    border-bottom: 1px solid $light-grey
+    div.logo-bg
+        position: relative
+        margin: 0 14px
+        width: 34px
+        height: 34px
+        background-color: $black
+        border-radius: 50%
+        div.logo
+            +bg-image(10.2px, 23.17px, './../assets/fewLogo.png')
+            +center
+    p.spaceSystem
+        margin: 0
+        font-size: 24px
+        font-weight: 900
+        line-height: 60px
+    button.joinBtn
+        position: absolute
+        top: 0
+        right: 0

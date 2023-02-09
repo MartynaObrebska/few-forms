@@ -1,7 +1,5 @@
 import React from "react";
-import "./App.css";
 import TopMenu from "../topMenu/TopMenu";
-import UnderBar from "../underBar/UnderBar";
 import ProductSection from "../productSection/ProductSection";
 import ServiceBar from "../serviceBar/ServiceBar";
 import ProductCategories from "../productCategories/ProductCategories";
@@ -12,9 +10,8 @@ import PopUp from "../popUp/PopUp";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <TopMenu />
-      <UnderBar />
       <Header />
       <ProductSection />
       <ServiceBar />

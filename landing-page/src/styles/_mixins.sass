@@ -1,0 +1,29 @@
+
+=flex($dir: row, $justify-content: center, $align-items: center)
+    display: flex
+    flex-direction: $dir
+    justify-content: $justify-content
+    align-items: $align-items
+
+=container($width)
+    position: absolute
+    width: $width
+    +flex(column, space-between, stretch)
+    padding: 45px 50px
+    background-color: $white
+    border: 1px solid $grey
+    border-radius: 10px
+    backdrop-filter: blur(2px)
+
+=bg-image($height, $width, $url, $size: cover)
+    height: $height
+    width: $width
+    background-image: url($url)
+    background-repeat: no-repeat
+    background-size: $size
+
+=center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)

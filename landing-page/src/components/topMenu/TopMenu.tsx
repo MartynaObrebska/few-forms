@@ -5,9 +5,7 @@ import UnderBar from "../underBar/UnderBar";
 function TopMenu() {
   return (
     <div className="topMenu">
-      <div className="logo-bg">
-        <div className="logo" />
-      </div>
+      <div className="logo" />
       <p className="spaceSystem">Space System</p>
       <JoinBtn />
       <UnderBar />

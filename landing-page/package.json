@@ -1,5 +1,6 @@
 {
-  "name": "landing-page",
+  "name": "spacesystem-few-forms",
+  "homepage": "https://spacesystem.fewforms.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

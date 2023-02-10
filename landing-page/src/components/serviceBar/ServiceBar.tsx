@@ -6,7 +6,7 @@ function ServiceBar() {
   return (
     <div className="serviceBar">
       {titles.map((title, index) => (
-        <div className="serviceBarItem">
+        <div key={index} className="serviceBarItem">
           <div className={`${icons[index]}`} />
           <p>{title}</p>
           <div className="info" />

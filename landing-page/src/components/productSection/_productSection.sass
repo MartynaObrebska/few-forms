@@ -1,3 +1,45 @@
+@import 'controlPanel/_controlPanel'
+
 div.productSection
+    position: relative
     height: 698px
     background-color: $dark-white
+    div.content
+        +center
+        +flex(row, space-between, stretch)
+        height: 578px
+        width: 1240px
+        div.gallery
+            +flex(column, space-between, stretch)
+            width: 820px
+            div.picture
+                +bg-image(473px, 100%, './../assets/Sideboard_picture.svg')
+                position: relative
+                div.arrow
+                    +center
+                    +bg-image(32px, 32px, './../assets/Arrows.svg')
+                    transform: translateX(0)
+                    &.left
+                        left: 20px
+                        transform: rotate(180)
+                    &.right
+                        left: auto
+                        right: 20px
+            div.pictureList
+                position: relative
+                height: 85px
+                overflow: hidden
+                ul
+                    +flex(row, space-between, stretch)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    height: 85px
+                    margin: 0
+                    padding: 0
+                    list-style: none
+                    li
+                        +bg-image(81px, 130px, './../assets/Sideboard_picture.svg')
+                        margin-right: 10px
+                        border: 1px solid $grey
+                        border-radius: 2px

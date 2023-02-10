@@ -1,7 +1,19 @@
 import React from "react";
 
 function ServiceBar() {
-  return <div className="serviceBar"></div>;
+  const titles = ["Customise online", "Fast delivery", "Easy change or return"];
+  const icons = ["customise", "delivery", "return"];
+  return (
+    <div className="serviceBar">
+      {titles.map((title, index) => (
+        <div className="serviceBarItem">
+          <div className={`${icons[index]}`} />
+          <p>{title}</p>
+          <div className="info" />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default ServiceBar;

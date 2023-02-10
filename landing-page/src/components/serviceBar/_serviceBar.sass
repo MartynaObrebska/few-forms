@@ -1,2 +1,17 @@
 div.serviceBar
+    +flex
     height: 70px
+    div.serviceBarItem
+        margin: 0 90px
+        +flex
+        div
+            &.customise
+                +bg-image(20px, 22px, './../assets/customise_icon.svg')
+            &.delivery
+                +bg-image(16px, 23px, './../assets/delivery_icon.svg')
+            &.return
+                +bg-image(16px, 19px, './../assets/return_icon.svg')
+            &.info
+                +bg-image(18px, 19px, './../assets/info_icon.svg')
+        p
+            margin: 0 12px

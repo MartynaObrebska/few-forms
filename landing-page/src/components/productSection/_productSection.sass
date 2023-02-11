@@ -2,7 +2,7 @@
 
 div.productSection
     position: relative
-    height: 698px
+    min-height: 698px
     background-color: $dark-white
     div.content
         +center
@@ -13,7 +13,7 @@ div.productSection
             +flex(column, space-between, stretch)
             width: 820px
             div.picture
-                +bg-image(473px, 100%, './../assets/Sideboard_picture.svg')
+                +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
                 position: relative
                 div.arrow
                     +center
@@ -21,7 +21,7 @@ div.productSection
                     transform: translateX(0)
                     &.left
                         left: 20px
-                        transform: rotate(180)
+                        transform: rotate(180deg)
                     &.right
                         left: auto
                         right: 20px
@@ -39,7 +39,7 @@ div.productSection
                     padding: 0
                     list-style: none
                     li
-                        +bg-image(81px, 130px, './../assets/Sideboard_picture.svg')
+                        +bg-image(81px, 130px, './../assets/Sideboard_picture.svg', cover)
                         margin-right: 10px
                         border: 1px solid $grey
                         border-radius: 2px

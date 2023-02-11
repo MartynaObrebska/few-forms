@@ -6,3 +6,57 @@ div.controlPanel
         padding: 15px 0 15px 20px
         font-size: 30px
         font-weight: 500
+        line-height: 41px
+    div.productInfo
+        +flex(column, space-between, stretch)
+        height: 322px
+        background-color: $white
+        border-width: 1px 0px
+        border-style: solid
+        border-color: $light-grey
+        p.title
+            margin-left: 25px
+            line-height: 54px
+
+        div.label
+            +flex(row, flex-start)
+            margin-left: 28px
+            height: 53px
+            border-top: 1px solid $dark-white
+            div.plus
+                +bg-image(10px,10px, './../assets/+.svg')
+                margin-right: 9px
+            p
+                font-weight: 300
+    div.bottomSection
+        +flex(row, flex-start)
+        div.priceContainer
+            margin-left: 25px
+            p.price
+                font-size: 24px
+                line-height: 33px
+                font-weight: 900
+                span
+                    padding-right: 5px
+            p.desc
+                font-weight: 300
+                font-size: 13px
+                line-height: 18px
+        button.joinBtn
+            flex-grow: 1
+            margin: 21px 25px 21px 20px
+    div.note
+        +flex(row, center, flex-start)
+        height: 96px
+        margin: 20px 30px
+        gap: 10px
+        div.icon
+            +bg-image(42px, 42px, './../assets/Measure.svg')
+            flex-grow: 1
+        p
+            width: 287px
+            font-size: 13px
+            font-weight: 100
+            span
+                font-size: 15px
+                font-weight: 900

@@ -2,21 +2,40 @@ import React from "react";
 import JoinBtn from "../../joinBtn/JoinBtn";
 
 function ControlPanel() {
+  const labels = [
+    "Sizes",
+    "Colors",
+    "Storage features",
+    "Materials",
+    "Delivery & Assembly",
+  ];
   return (
     <div className="controlPanel">
       <div className="title">Sideboards</div>
-      {/* <div className="product info">
-        <p>Product info:</p>
-        <div className="accordion"></div>
-      </div> */}
+      <div className="productInfo">
+        <p className="title">Product info:</p>
+        {labels.map((label) => (
+          <div className="label">
+            <div className="plus" />
+            <p>{label}</p>
+          </div>
+        ))}
+      </div>
       <div className="bottomSection">
-        {/* <div className="price">
-          <p>
+        <div className="priceContainer">
+          <p className="price">
             <span>000</span>€
           </p>
           <p className="desc">Estimated price</p>
         </div>
-        <JoinBtn /> */}
+        <JoinBtn />
+      </div>
+      <div className="note">
+        <div className="icon"></div>
+        <p>
+          <span>Note:</span> Security: The ability for the website to protect
+          against hacking and other security threats, ensuring that user data.
+        </p>
       </div>
     </div>
   );

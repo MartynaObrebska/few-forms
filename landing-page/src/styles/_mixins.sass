@@ -14,12 +14,13 @@
     border-radius: $border-radius
     backdrop-filter: blur(2px)
 
-=bg-image($height, $width, $url, $size: cover)
+=bg-image($height, $width, $url, $size: contain)
     height: $height
     width: $width
     background-image: url($url)
     background-repeat: no-repeat
     background-size: $size
+    background-position: center
 
 =center
     position: absolute

@@ -1,3 +1,48 @@
 div.testimonials
+    +flex(column)
+    gap: 30px
     height: 710px
     background-color: $light-blue
+    border-top: 1px solid $grey
+    h1
+        color: $blue
+        font-size: 36px
+    p.description
+        width: 620px
+        color: $blue
+        font-size: 24px
+    button
+        width: 300px
+    div.reviewsContainer
+        position: relative
+        height: 340px
+        width: 1440px
+        overflow: hidden
+        div.reviewsList
+            +flex
+            gap: 20px
+            div.review
+                +container(293px, 0, $dark-white, 5px)
+                div.pictureContainer
+                    height: 200px
+                    overflow: hidden
+                    div.picture
+                        +bg-image(200px, 300px, './../assets/review.svg', cover)
+                div.textContainer
+                    margin: 15px 20px
+                    +flex(column, space-between)
+                    text-align: justify
+                    height: 108px
+        div.arrow
+            +center
+            +bg-image(35px, 35px, './../assets/Arrows-white.svg')
+            transform: translate(0)
+            &:hover
+                background-image: url('./../assets/Arrows-black.svg')
+                cursor: pointer
+            &.left
+                left: 90px
+                transform: rotate(180deg)
+            &.right
+                left: auto
+                right: 90px

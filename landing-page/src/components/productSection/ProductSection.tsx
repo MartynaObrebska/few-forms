@@ -21,9 +21,7 @@ function ProductSection() {
           <div className="pictureList">
             <ul>
               {pictures.map((picture, index) => (
-                <li key={index}>
-                  <div className={`listPicture ${picture}`} />
-                </li>
+                <li key={index} className={`listPicture ${picture}`} />
               ))}
             </ul>
           </div>

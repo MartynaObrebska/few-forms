@@ -24,10 +24,15 @@ div.controlPanel
             height: 53px
             border-top: 1px solid $dark-white
             div.plus
-                +bg-image(10px,10px, './../assets/+.svg')
+                +bg-image(10px,10px, './../assets/plus-light.svg')
                 margin-right: 9px
             p
                 font-weight: 300
+            &hover
+                div.plus
+                    background-image: url('./../assets/plus-dark.svg')
+                p
+                    font-weight: 900
     div.bottomSection
         +flex(row, flex-start)
         div.priceContainer

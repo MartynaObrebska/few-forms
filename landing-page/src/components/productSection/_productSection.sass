@@ -17,14 +17,17 @@ div.productSection
                 position: relative
                 div.arrow
                     +center
-                    +bg-image(32px, 32px, './../assets/Arrows.svg')
+                    +bg-image(32px, 32px, './../assets/Arrows-light.svg')
                     transform: translateX(0)
+                    &:hover
+                        background-image: url('./../assets/Arrows-dark.svg')
+                        cursor: pointer
                     &.left
                         left: 20px
-                        transform: rotate(180deg)
                     &.right
                         left: auto
                         right: 20px
+                        transform: rotate(180deg)
             div.pictureList
                 position: relative
                 height: 85px
@@ -43,3 +46,7 @@ div.productSection
                         margin-right: 10px
                         border: 1px solid $grey
                         border-radius: 2px
+                        opacity: 0.5
+                        &.active
+                            border-color: $black
+                            opacity: 1

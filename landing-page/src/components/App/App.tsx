@@ -9,16 +9,24 @@ import Footer from "../footer/Footer";
 import PopUp from "../popUp/PopUp";
 
 function App() {
+  const [activePopUp, setActivePopUp] = React.useState(false);
+  const handleOpenPopUp = () => {
+    setActivePopUp(true);
+  };
+  const handleClosePopUp = () => {
+    setActivePopUp(false);
+  };
+
   return (
     <div className="app">
-      <TopMenu />
+      <TopMenu handleOpenPopUp={handleOpenPopUp} />
       <Header />
-      <ProductSection />
+      <ProductSection handleOpenPopUp={handleOpenPopUp} />
       <ServiceBar />
       <ProductCategories />
-      <Testimonials />
+      <Testimonials handleOpenPopUp={handleOpenPopUp} />
       <Footer />
-      <PopUp />
+      {activePopUp && <PopUp handleClosePopUp={handleClosePopUp} />}
     </div>
   );
 }

@@ -1,7 +1,15 @@
 import React from "react";
 
-function JoinBtn() {
-  return <button className="joinBtn">Join waitlist</button>;
+interface Props {
+  handleClick?: () => void;
+}
+
+function JoinBtn(props: Props) {
+  return (
+    <button className="joinBtn" onClick={props.handleClick}>
+      Join waitlist
+    </button>
+  );
 }
 
 export default JoinBtn;

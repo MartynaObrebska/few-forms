@@ -1,23 +1,23 @@
 div.signUp
     position: absolute
     +container(300px)
-    top: 50%
-    right: 100px
-    transform: translateY(-50%)
-    h2
+    top: 0
+    left: 0
+    text-align: left
+    h2.title
         margin: 0
         font-size: 36px
         line-height: 49px
         padding-bottom: 30px
         font-weight: 900
-    p
+    p.description
         margin: 0
-        text-align: left
         line-height: 22px
         padding: 0 10px 45px 0
     label
-        text-align: left
         line-height: 21.86px
+        span
+            color: $red
     input
         padding: 0 20px
         border: 1px solid $grey
@@ -39,3 +39,11 @@ div.signUp
         font-weight: 100
         &span
             text-decoration: underline
+    div.close
+        +bg-image(32px, 32px, './../assets/close.svg')
+        position: absolute
+        top: 20px
+        right: 20px
+        cursor: pointer
+        &:hover
+            background-image: url('./../assets/close-hover.svg')

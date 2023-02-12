@@ -1,7 +1,11 @@
 import React from "react";
 import ControlPanel from "./controlPanel/ControlPanel";
 
-function ProductSection() {
+interface Props {
+  handleOpenPopUp: () => void;
+}
+
+function ProductSection(props: Props) {
   const pictures = [
     "picture1",
     "picture2",
@@ -26,7 +30,7 @@ function ProductSection() {
             </ul>
           </div>
         </div>
-        <ControlPanel />
+        <ControlPanel handleOpenPopUp={props.handleOpenPopUp} />
       </div>
     </div>
   );

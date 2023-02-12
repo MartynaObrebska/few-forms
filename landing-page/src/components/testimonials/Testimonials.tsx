@@ -1,7 +1,11 @@
 import React from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 
-function Testimonials() {
+interface Props {
+  handleOpenPopUp: () => void;
+}
+
+function Testimonials(props: Props) {
   const reviews = [
     "@mmlstudio",
     "@mmlstudio",
@@ -18,7 +22,7 @@ function Testimonials() {
         Meet the community of People and of Interior Designer, that believe into
         Space System furniture.
       </p>
-      <JoinBtn />
+      <JoinBtn handleClick={props.handleOpenPopUp} />
       <div className="reviewsContainer">
         <div className="reviewsList">
           {reviews.map((review) => (

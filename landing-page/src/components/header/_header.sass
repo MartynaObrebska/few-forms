@@ -1,7 +1,6 @@
-@import "signUp/_signUp"
-
 div.header
     position: relative
+    top: 60px
     +bg-image(calc(98vh - 60px), 100%, './../assets/Beauty-Sideboard-1.png', cover)
     div.shadow
         position: absolute
@@ -31,3 +30,12 @@ div.header
         background: none
         border: 2px solid $light-white
         border-radius: 22.5px
+    div.signUp
+        top: 50%
+        left: auto
+        right: 100px
+        transform: translateY(-50%)
+        h2.title
+            text-align: center
+        div.close
+            display: none

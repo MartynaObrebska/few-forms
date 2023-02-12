@@ -1,7 +1,11 @@
 import React from "react";
 import JoinBtn from "../../joinBtn/JoinBtn";
 
-function ControlPanel() {
+interface Props {
+  handleOpenPopUp: () => void;
+}
+
+function ControlPanel(props: Props) {
   const labels = [
     "Sizes",
     "Colors",
@@ -28,7 +32,7 @@ function ControlPanel() {
           </p>
           <p className="desc">Estimated price</p>
         </div>
-        <JoinBtn />
+        <JoinBtn handleClick={props.handleOpenPopUp} />
       </div>
       <div className="note">
         <div className="icon"></div>

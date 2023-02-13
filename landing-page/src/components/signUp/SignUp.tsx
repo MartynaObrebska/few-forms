@@ -4,7 +4,7 @@ import JoinBtn from "../joinBtn/JoinBtn";
 interface Props {
   title: string;
   descripion: string;
-  postscript: string;
+  postscript: JSX.Element;
   handleClosePopUp?: () => void;
 }
 
@@ -19,7 +19,7 @@ function SignUp(props: Props) {
       </label>
       <input placeholder="Enter your email" type="text" required></input>
       <JoinBtn />
-      <p className="postscript">{postscript}</p>
+      {postscript}
       <div className="close" onClick={handleClosePopUp} />
     </div>
   );

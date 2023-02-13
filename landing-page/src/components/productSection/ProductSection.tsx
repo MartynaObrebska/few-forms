@@ -15,7 +15,7 @@ function ProductSection(props: Props) {
     "picture6",
   ];
   return (
-    <div className="productSection">
+    <div id="productSection" className="productSection">
       <div className="content">
         <div className="gallery">
           <div className="picture">

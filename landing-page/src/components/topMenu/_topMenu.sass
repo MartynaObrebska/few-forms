@@ -10,19 +10,25 @@ div.topMenu
     +flex
     border-bottom: 1px solid $light-grey
     background-color: $white
-    div.logo
-        margin: 0 14px
-        width: 34px
-        height: 34px
-        background-image: url('./../assets/logo.svg')
-        background-repeat: no-repeat
-        background-size: contain
-    p.spaceSystem
-        margin: 0
-        font-size: 24px
-        font-weight: 900
-        line-height: 60px
+    transition: .3s
+    div.home
+        +flex
+        cursor: pointer
+        div.logo
+            margin: 0 14px
+            width: 34px
+            height: 34px
+            background-image: url('./../assets/logo.svg')
+            background-repeat: no-repeat
+            background-size: contain
+        p.spaceSystem
+            margin: 0
+            font-size: 24px
+            font-weight: 900
+            line-height: 60px
     button.joinBtn
         position: absolute
         top: 0
         right: 0
+    &.disabled
+        top: -60px

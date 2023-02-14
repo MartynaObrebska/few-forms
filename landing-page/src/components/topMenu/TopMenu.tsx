@@ -10,7 +10,7 @@ interface Props {
 
 function TopMenu(props: Props) {
   const { activeTopMenu, handleHomeBtn, handleOpenPopUp } = props;
-  const topMenuClassName = activeTopMenu ? "topMenu" : "topMenu disabled";
+  const topMenuClassName = `topMenu${activeTopMenu ? "" : "  disabled"}`;
   return (
     <div className={topMenuClassName}>
       <div className="home" onClick={handleHomeBtn}>

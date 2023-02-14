@@ -1,4 +1,5 @@
 @import 'controlPanel/_controlPanel'
+@import 'gallery/_gallery'
 
 div.productSection
     position: relative
@@ -9,45 +10,3 @@ div.productSection
         +flex(row, space-between, stretch)
         height: 578px
         width: 1240px
-        div.gallery
-            +flex(column, space-between, stretch)
-            width: 820px
-            div.picture
-                +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
-                position: relative
-                div.arrow
-                    +center
-                    +bg-image(32px, 32px, './../assets/Arrows-light.svg')
-                    transform: translateX(0)
-                    &:hover
-                        background-image: url('./../assets/Arrows-dark.svg')
-                        cursor: pointer
-                    &.left
-                        left: 20px
-                    &.right
-                        left: auto
-                        right: 20px
-                        transform: rotate(180deg)
-            div.pictureList
-                position: relative
-                height: 85px
-                overflow: hidden
-                ul
-                    +flex(row, space-between, stretch)
-                    position: absolute
-                    top: 0
-                    left: 0
-                    height: 85px
-                    margin: 0
-                    padding: 0
-                    list-style: none
-                    li
-                        +bg-image(81px, 130px, './../assets/Sideboard_picture.svg', cover)
-                        margin-right: 10px
-                        border: 1px solid $grey
-                        border-radius: 2px
-                        opacity: 0.5
-                        cursor: pointer
-                        &.active
-                            border-color: $black
-                            opacity: 1

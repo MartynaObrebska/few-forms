@@ -1,0 +1,41 @@
+@import './../../../../node_modules/react-responsive-carousel/lib/styles/carousel'
+
+div.picture
+    +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
+    &.thumbPicture
+        height: 85px
+.carousel
+    width: 820px
+    div.arrow
+        +center
+        +bg-image(32px, 32px, './../assets/Arrows-light.svg')
+        transform: translateX(0)
+        z-index: 1
+        &:hover
+            background-image: url('./../assets/Arrows-dark.svg')
+            cursor: pointer
+        &.left
+            left: 20px
+        &.right
+            left: auto
+            right: 20px
+            transform: rotate(180deg)
+    .control-dots
+        .dot
+            box-shadow: none
+            background-color: $black
+            width: 10px
+            height: 10px
+    .thumbs-wrapper
+        .thumbs
+            margin: 0
+            padding-inline-start: 0
+            .thumb
+                border: 1px solid $grey
+                border-radius: 2px
+                opacity: 0.5
+                padding: 0
+                margin-right: 10px
+                &.selected, &:hover, &:focus
+                    border: 1px solid $black
+                    opacity: 1

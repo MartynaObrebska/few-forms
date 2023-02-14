@@ -26,7 +26,7 @@ const Gallery = () => {
       renderThumbs={renderThumbs}
       showStatus={false}
       width="820px"
-      thumbWidth={134}
+      thumbWidth={144}
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
     >

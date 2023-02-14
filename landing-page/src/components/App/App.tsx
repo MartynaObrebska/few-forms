@@ -11,6 +11,12 @@ import PopUp from "../popUp/PopUp";
 function App() {
   const [activeTopMenu, setActiveTopMenu] = useState(true);
   const [activePopUp, setActivePopUp] = useState(false);
+  // Home
+  const handleHomeBtn = () => {
+    if (window.scrollY > 0) {
+      document.body.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   // Pop up
   const handleOpenPopUp = () => {
     setActivePopUp(true);
@@ -41,6 +47,7 @@ function App() {
     <div className="app">
       <TopMenu
         activeTopMenu={activeTopMenu}
+        handleHomeBtn={handleHomeBtn}
         handleOpenPopUp={handleOpenPopUp}
       />
       <Header handleClickScroll={handleClickScroll} />

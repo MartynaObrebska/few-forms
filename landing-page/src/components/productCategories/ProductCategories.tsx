@@ -13,8 +13,8 @@ function ProductCategories() {
       <h1>Explore more furniture categories</h1>
       <div className="categoriesContainer">
         <div className="categoriesList">
-          {categories.map((category) => (
-            <div className="category">
+          {categories.map((category, index) => (
+            <div key={index} className="category">
               <div className="pictureContainer">
                 <div className="picture" />
               </div>

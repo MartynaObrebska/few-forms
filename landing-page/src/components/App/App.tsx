@@ -26,6 +26,13 @@ function App() {
     else setActiveTopMenu(true);
     scrollBefore = scrolled;
   };
+  const handleClickScroll = () => {
+    const productSection = document.getElementById("productSection");
+    if (productSection) {
+      productSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
@@ -36,7 +43,7 @@ function App() {
         activeTopMenu={activeTopMenu}
         handleOpenPopUp={handleOpenPopUp}
       />
-      <Header />
+      <Header handleClickScroll={handleClickScroll} />
       <ProductSection handleOpenPopUp={handleOpenPopUp} />
       <ServiceBar />
       <ProductCategories />

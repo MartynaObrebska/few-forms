@@ -18,8 +18,8 @@ function ControlPanel(props: Props) {
       <div className="title">Sideboards</div>
       <div className="productInfo">
         <p className="title">Product info:</p>
-        {labels.map((label) => (
-          <div className="label">
+        {labels.map((label, index) => (
+          <div key={index} className="label">
             <div className="plus" />
             <p>{label}</p>
           </div>

@@ -23,12 +23,13 @@ div.controlPanel
             margin-left: 28px
             height: 53px
             border-top: 1px solid $dark-white
+            cursor: pointer
             div.plus
                 +bg-image(10px,10px, './../assets/plus-light.svg')
                 margin-right: 9px
             p
                 font-weight: 300
-            &hover
+            &:hover
                 div.plus
                     background-image: url('./../assets/plus-dark.svg')
                 p

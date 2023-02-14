@@ -25,8 +25,8 @@ function Testimonials(props: Props) {
       <JoinBtn handleClick={props.handleOpenPopUp} />
       <div className="reviewsContainer">
         <div className="reviewsList">
-          {reviews.map((review) => (
-            <div className="review">
+          {reviews.map((review, index) => (
+            <div key={index} className="review">
               <div className="pictureContainer">
                 <div className="picture" />
               </div>

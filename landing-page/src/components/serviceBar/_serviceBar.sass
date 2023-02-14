@@ -15,9 +15,33 @@ div.serviceBar
             &.return
                 +bg-image(16px, 19px, './../assets/return_icon.svg')
             &.info
+                position: relative
                 +bg-image(18px, 18px, './../assets/info_icon.svg')
+                .tooltip
+                    +container(325px, 22px 20px, $light-grey, 2px)
+                    border: none
+                    visibility: hidden
+                    position: absolute
+                    z-index: 1
+                    top: calc(100% + 32px)
+                    left: -150px
+                    font-size: 15px
+                    line-height: 20px
+                    text-align: justify
+                    &::after
+                        content: " "
+                        position: absolute
+                        bottom: 100%
+                        left: 160px
+                        margin-left: -22px
+                        border-width: 22px
+                        border-style: solid
+                        border-color: transparent transparent $light-grey transparent
+
                 &:hover
                     +bg-image(18px, 18px, './../assets/info_icon-Type=Hoover.svg')
                     cursor: pointer
+                    .tooltip
+                        visibility: visible
         p
             margin: 0 12px

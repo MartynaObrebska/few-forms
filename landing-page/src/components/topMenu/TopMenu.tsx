@@ -1,24 +1,45 @@
-import React from "react";
+import React, { MutableRefObject, useEffect, useState } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
-import UnderBar from "../underBar/UnderBar";
+import UnderBar from "./underBar/UnderBar";
 
 interface Props {
-  activeTopMenu: boolean;
+  productSectionRef: MutableRefObject<HTMLDivElement | null>;
   handleHomeBtn: () => void;
   handleOpenPopUp: () => void;
 }
 
 function TopMenu(props: Props) {
-  const { activeTopMenu, handleHomeBtn, handleOpenPopUp } = props;
+  const { productSectionRef, handleHomeBtn, handleOpenPopUp } = props;
+  const [activeTopMenu, setActiveTopMenu] = useState(true);
+  const [scrollValue, setScrollValue] = useState(0);
   const topMenuClassName = `topMenu${activeTopMenu ? "" : "  disabled"}`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      setActiveTopMenu(scrolled <= scrollValue);
+      setScrollValue(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollValue]);
+
   return (
     <div className={topMenuClassName}>
-      <div className="home" onClick={handleHomeBtn}>
-        <div className="logo" />
-        <p className="spaceSystem">Space System</p>
+      <div className="topMenuContainer">
+        <div className="home" onClick={handleHomeBtn}>
+          <div className="logo" />
+          <p className="spaceSystem">Space System</p>
+        </div>
+        <JoinBtn handleClick={handleOpenPopUp} />
       </div>
-      <JoinBtn handleClick={handleOpenPopUp} />
-      <UnderBar />
+      <UnderBar
+        scrollValue={scrollValue}
+        productSectionRef={productSectionRef}
+      />
     </div>
   );
 }

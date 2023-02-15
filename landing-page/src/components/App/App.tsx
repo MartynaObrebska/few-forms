@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import TopMenu from "../topMenu/TopMenu";
 import ProductSection from "../productSection/ProductSection";
 import ServiceBar from "../serviceBar/ServiceBar";
@@ -9,10 +9,8 @@ import Footer from "../footer/Footer";
 import PopUp from "../popUp/PopUp";
 
 function App() {
-  const [activeTopMenu, setActiveTopMenu] = useState(true);
   const [activePopUp, setActivePopUp] = useState(false);
-  const [scrollValue, setScrollValue] = useState(0)
-  const productSectionRef = useRef<HTMLDivElement | null>(null)
+  const productSectionRef = useRef<HTMLDivElement | null>(null);
   // Home
   const handleHomeBtn = () => {
     if (window.scrollY > 0) {
@@ -31,29 +29,18 @@ function App() {
     productSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      setActiveTopMenu(scrolled <= scrollValue);
-      setScrollValue(scrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [scrollValue]);
-
   return (
     <div className="app">
       <TopMenu
-        activeTopMenu={activeTopMenu}
+        productSectionRef={productSectionRef}
         handleHomeBtn={handleHomeBtn}
         handleOpenPopUp={handleOpenPopUp}
       />
       <Header handleClickScroll={handleClickScroll} />
-      <ProductSection productSectionRef={productSectionRef} handleOpenPopUp={handleOpenPopUp} />
+      <ProductSection
+        productSectionRef={productSectionRef}
+        handleOpenPopUp={handleOpenPopUp}
+      />
       <ServiceBar />
       <ProductCategories />
       <Testimonials handleOpenPopUp={handleOpenPopUp} />

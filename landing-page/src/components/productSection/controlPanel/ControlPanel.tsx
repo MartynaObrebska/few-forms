@@ -1,29 +1,17 @@
-import React from "react";
 import JoinBtn from "../../joinBtn/JoinBtn";
+import Accordion from "./accordion/Accordion";
 
 interface Props {
   handleOpenPopUp: () => void;
 }
 
 function ControlPanel(props: Props) {
-  const labels = [
-    "Sizes",
-    "Colors",
-    "Storage features",
-    "Materials",
-    "Delivery & Assembly",
-  ];
   return (
     <div className="controlPanel">
-      <div className="title">Sideboards</div>
+      <div className="productTitle">Sideboards</div>
       <div className="productInfo">
         <p className="title">Product info:</p>
-        {labels.map((label, index) => (
-          <div key={index} className="label">
-            <div className="plus" />
-            <p>{label}</p>
-          </div>
-        ))}
+        <Accordion />
       </div>
       <div className="bottomSection">
         <div className="priceContainer">

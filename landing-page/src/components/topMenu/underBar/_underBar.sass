@@ -2,13 +2,12 @@ div.underBar
     +flex
     position: absolute
     width: 100%
-    top: 60px
+    top: 15px
     left: 0
     height: 45px
     background-color: $light-green
     color: $green
-    z-index: 1
-    // display: hidden
+    transition: .3s
     div.status
         margin: 10px
         height: 19px
@@ -18,3 +17,5 @@ div.underBar
         background-size: contain
     p
         font-size: 14px
+    &.active
+        top: 60px

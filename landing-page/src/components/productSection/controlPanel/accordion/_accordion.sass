@@ -1,30 +1,37 @@
-div.accordion
-    div.info
+.accordion
+    .tab
         border-top: 1px solid $dark-white
-        div.label
+        overflow: hidden
+        &-label
             +flex(row, flex-start)
             margin-left: 28px
             height: 53px
             cursor: pointer
-            div.plus
+            &-plus
                 +bg-image(10px,10px, './../assets/plus-light.svg')
                 margin-right: 9px
                 transition: .3s
                 &.active
                     background-image: url('./../assets/plus-dark.svg')
-                    transform: rotate(45deg)
-            p.labelName
+                    width: 12px
+                    height: 12px
+                    margin-right: 7px
+                    transform: rotate(135deg)
+            &-name
                 font-weight: 300
                 transition: .3s
                 &.active
                     font-weight: 900
             &:hover
-                div.plus
+                .tab-label-plus
                     background-image: url('./../assets/plus-dark.svg')
-                p.labelName
+                .tab-label-name
                     font-weight: 900
-        div.text
-            padding: 0 30px 20px 48px
-            font-weight: 300
+        .tab-content-wrapper
             font-size: 13px
+            font-weight: 300
             line-height: 18px
+            transition: .3s
+            overflow: hidden
+            div.tab-content
+                padding: 0 30px 20px 48px

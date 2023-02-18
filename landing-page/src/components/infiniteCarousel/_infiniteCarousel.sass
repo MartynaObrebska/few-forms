@@ -1,0 +1,41 @@
+.carousel-container
+    +flex(column)
+    gap: 30px
+    width: 100%
+    .carousel
+        position: relative
+        height: 400px
+        width: 100%
+        overflow: hidden
+        .arrow
+            +center
+            +bg-image(35px, 35px, './../assets/Arrows-black.svg')
+            z-index: 2
+            transform: translateX(0)
+            &:hover
+                cursor: pointer
+            &.left
+                left: 28px
+                transform: rotate(180deg)
+            &.right
+                left: auto
+                right: 28px
+            &.disabled
+                background-image: url('./../assets/Arrows-light.svg')
+                cursor: auto
+    .slide-container
+        position: relative
+        height: 8px
+        width: 400px
+        background-color: $light-white
+        border-radius: 10px
+        overflow: hidden
+        .slider
+            position: absolute
+            top: 0
+            left: 0
+            width: 100px
+            height: 8px
+            background-color: $black
+            border-radius: 10px
+            transition: .3s

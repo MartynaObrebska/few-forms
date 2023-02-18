@@ -1,4 +1,4 @@
-import React from "react";
+import InfiniteCarousel from "../infiniteCarousel/InfiniteCarousel";
 
 function ProductCategories() {
   const categories = [
@@ -7,26 +7,23 @@ function ProductCategories() {
     "Bookcase",
     "Bookcase",
     "Bookcase",
+    "Bookcase",
   ];
-  return (
-    <div className="productCategories">
-      <h1>Explore more furniture categories</h1>
-      <div className="categoriesContainer">
-        <div className="categoriesList">
-          {categories.map((category, index) => (
-            <div key={index} className="category">
-              <div className="pictureContainer">
-                <div className="picture" />
-              </div>
-              <div className="name">{category}</div>
-            </div>
-          ))}
-        </div>
-        <div className="arrow left disabled" />
-        <div className="arrow right" />
+
+  const slides = categories.map((category) => (
+    <div className="category">
+      <div className="picture-container">
+        <div className="picture" />
       </div>
-      <div className="orderBar">
-        <div className="number" />
+      <div className="name">{category}</div>
+    </div>
+  ));
+
+  return (
+    <div className="product-categories">
+      <div className="product-categories-content">
+        <h1>Explore more furniture categories</h1>
+        <InfiniteCarousel sliderActive={true} slides={slides} parts={3} />
       </div>
     </div>
   );

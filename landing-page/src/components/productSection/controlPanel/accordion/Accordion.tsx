@@ -35,6 +35,7 @@ function Accordion() {
     <div className="accordion">
       {tabs.map((tab, index) => (
         <AccordionTab
+          key={index}
           index={index}
           tab={tab}
           activeLabel={activeLabel}

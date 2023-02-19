@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 import Slider from "infinite-react-carousel";
 
@@ -7,6 +7,8 @@ interface Props {
 }
 
 function Testimonials(props: Props) {
+  const defaultSlidesToShow = 4.57;
+  const [slidesToShow, setSlidesToShow] = useState(defaultSlidesToShow);
   const reviewsContainerRef = useRef<HTMLDivElement | null>(null);
 
   const reviews = [
@@ -18,12 +20,24 @@ function Testimonials(props: Props) {
     "@mmlstudio",
     "@mmlstudio",
   ];
-
+  const slideWidth = 315;
   const calculateSlidesToShow = () => {
     return reviewsContainerRef.current
-      ? reviewsContainerRef.current.clientWidth / 315
-      : 4.57;
+      ? reviewsContainerRef.current.clientWidth / slideWidth
+      : defaultSlidesToShow;
   };
+
+  const resizeHandler = useCallback(() => {
+    setSlidesToShow(calculateSlidesToShow());
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
 
   return (
     <div className="testimonials">
@@ -36,7 +50,7 @@ function Testimonials(props: Props) {
         <JoinBtn handleClick={props.handleOpenPopUp} />
         <div ref={reviewsContainerRef} className="reviewsContainer">
           <Slider
-            slidesToShow={calculateSlidesToShow()}
+            slidesToShow={slidesToShow}
             centerMode={true}
             centerPadding={0}
           >

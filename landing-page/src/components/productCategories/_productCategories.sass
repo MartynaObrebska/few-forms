@@ -1,3 +1,5 @@
+@import 'categoriesCarousel/_categoriesCarousel'
+
 .product-categories
     height: 637px
     background-color: $dark-white
@@ -10,23 +12,15 @@
         h1
             font-size: 36px
             font-weight: 900
-        .categories-list
-            position: absolute
-            top: 0
-            left: 0
-            +flex
-            gap: 20px
-            transition: .3s
-            padding: 0 100px
-            .category
-                +container(295px, 0, $blue, 5px)
-                .picture-container
-                    height: 280px
-                    overflow: hidden
-                    .picture
-                        +bg-image(280px, 295px, './../assets/category.svg', cover)
-                .name
-                    height: 118px
-                    font-size: 30px
-                    line-height: 118px
-                    color: $light-white
+        .category
+            +container(295px, 0, $blue, 5px)
+            .picture-container
+                height: 280px
+                overflow: hidden
+                .picture
+                    +bg-image(280px, 295px, './../assets/category.svg', cover)
+            .name
+                height: 118px
+                font-size: 30px
+                line-height: 118px
+                color: $light-white

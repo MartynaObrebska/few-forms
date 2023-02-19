@@ -1,4 +1,4 @@
-div.testimonials
+.testimonials
     height: 710px
     background-color: $light-blue
     border-top: 1px solid $grey
@@ -15,38 +15,45 @@ div.testimonials
             width: 620px
             color: $blue
             font-size: 24px
-        button
+        button.joinBtn
             width: 300px
-        .reviews
+        div.reviewsContainer
             position: relative
             height: 340px
-            width: 1440px
+            width: 100%
             overflow: hidden
-            .reviews-list
-                +flex
-                gap: 20px
-                .review
+            .review-container
+                padding: 0 10px
+                div.review
                     +container(293px, 0, $dark-white, 5px)
-                    .picture
+                    overflow: hidden
+                    div.pictureContainer
                         height: 200px
                         overflow: hidden
-                        &-content
+                        div.picture
                             +bg-image(200px, 300px, './../assets/review.svg', cover)
-                    .text
+                    div.textContainer
                         margin: 15px 20px
                         +flex(column, space-between)
                         text-align: justify
                         height: 108px
-            .arrow
+            .carousel-arrow
                 +center
                 +bg-image(35px, 35px, './../assets/Arrows-white.svg')
-                transform: translate(0)
+                transform: translate(0, -50%)
+                z-index: 2
+                border: none
+                background-color: transparent
                 &:hover
                     background-image: url('./../assets/Arrows-black.svg')
                     cursor: pointer
-                &.left
+                &.carousel-prev
                     left: 90px
                     transform: rotate(180deg)
-                &.right
+                    &::before
+                        content: none
+                &.carousel-next
                     left: auto
                     right: 90px
+                    &::before
+                        content: none

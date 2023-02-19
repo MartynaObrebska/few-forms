@@ -1,11 +1,14 @@
-import React from "react";
+import { useRef } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
+import Slider from "infinite-react-carousel";
 
 interface Props {
   handleOpenPopUp: () => void;
 }
 
 function Testimonials(props: Props) {
+  const reviewsContainerRef = useRef<HTMLDivElement | null>(null);
+
   const reviews = [
     "@mmlstudio",
     "@mmlstudio",
@@ -15,6 +18,13 @@ function Testimonials(props: Props) {
     "@mmlstudio",
     "@mmlstudio",
   ];
+
+  const calculateSlidesToShow = () => {
+    return reviewsContainerRef.current
+      ? reviewsContainerRef.current.clientWidth / 315
+      : 4.57;
+  };
+
   return (
     <div className="testimonials">
       <div className="testimonials-content">
@@ -24,25 +34,29 @@ function Testimonials(props: Props) {
           into Space System furniture.
         </p>
         <JoinBtn handleClick={props.handleOpenPopUp} />
-        <div className="reviews">
-          <div className="reviews-list">
+        <div ref={reviewsContainerRef} className="reviewsContainer">
+          <Slider
+            slidesToShow={calculateSlidesToShow()}
+            centerMode={true}
+            centerPadding={0}
+          >
             {reviews.map((review, index) => (
-              <div key={index} className="review">
-                <div className="picture">
-                  <div className="picture-content" />
-                </div>
-                <div className="text">
-                  <p className="text-content">
-                    I am over the moon, this is the next step in furniture
-                    evolution!
-                  </p>
-                  <p className="name">{review}</p>
+              <div key={index} className="review-container">
+                <div className="review">
+                  <div className="pictureContainer">
+                    <div className="picture" />
+                  </div>
+                  <div className="textContainer">
+                    <p className="text">
+                      I am over the moon, this is the next step in furniture
+                      evolution!
+                    </p>
+                    <p className="name">{review}</p>
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="arrow left" />
-          <div className="arrow right" />
+          </Slider>
         </div>
       </div>
     </div>

@@ -4,22 +4,27 @@ interface Props {
   sliderActive: boolean;
   slides: JSX.Element[];
   parts: number;
+  carouselHeight: number;
+  transitionSpeed?: number;
 }
 
-function InfiniteCarousel(props: Props) {
-  const { sliderActive, slides, parts } = props;
+function CategoriesCarousel(props: Props) {
+  const { sliderActive, slides, parts, carouselHeight } = props;
 
   const [visiblePart, setVisiblePart] = useState(0);
-  const categoriesListRef = useRef<HTMLDivElement | null>(null);
+  const slidesListRef = useRef<HTMLDivElement | null>(null);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const carouselPartWidth =
-    (categoriesListRef.current && carouselRef.current
-      ? categoriesListRef.current.offsetWidth - carouselRef.current.offsetWidth
+    (slidesListRef.current && carouselRef.current
+      ? slidesListRef.current.offsetWidth - carouselRef.current.offsetWidth
       : 0) / parts;
 
   const sliderWidth = sliderRef.current ? sliderRef.current.offsetWidth : 0;
+
+  const isLeftArrowDisabled = visiblePart === 0;
+  const isRightArrowDisabled = visiblePart === parts;
 
   const calculateCarouselLeftMargin = () => {
     return `-${visiblePart * carouselPartWidth}px`;
@@ -36,23 +41,27 @@ function InfiniteCarousel(props: Props) {
   const scrollRight = () => {
     setVisiblePart(visiblePart + 1);
   };
+
   return (
-    <div ref={carouselRef} className="carousel-container">
-      <div className="carousel">
+    <div ref={carouselRef} className="categories-carousel-container">
+      <div
+        className="categories-carousel"
+        style={{ height: `${carouselHeight}px` }}
+      >
         <div
-          ref={categoriesListRef}
-          className="categories-list"
+          ref={slidesListRef}
+          className="slides-list"
           style={{ left: calculateCarouselLeftMargin() }}
         >
           {slides}
         </div>
         <div
-          className={`arrow left ${visiblePart === 0 ? "disabled" : ""}`}
-          onClick={visiblePart === 0 ? undefined : scrollLeft}
+          className={`arrow left ${isLeftArrowDisabled ? "disabled" : ""}`}
+          onClick={isLeftArrowDisabled ? undefined : scrollLeft}
         />
         <div
-          className={`arrow right ${visiblePart === parts ? "disabled" : ""}`}
-          onClick={visiblePart === parts ? undefined : scrollRight}
+          className={`arrow right ${isRightArrowDisabled ? "disabled" : ""}`}
+          onClick={isRightArrowDisabled ? undefined : scrollRight}
         />
       </div>
       {sliderActive && (
@@ -68,4 +77,4 @@ function InfiniteCarousel(props: Props) {
   );
 }
 
-export default InfiniteCarousel;
+export default CategoriesCarousel;

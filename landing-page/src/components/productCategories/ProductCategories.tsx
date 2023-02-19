@@ -1,4 +1,4 @@
-import InfiniteCarousel from "../infiniteCarousel/InfiniteCarousel";
+import CategoriesCarousel from "./categoriesCarousel/CategoriesCarousel";
 
 function ProductCategories() {
   const categories = [
@@ -10,8 +10,8 @@ function ProductCategories() {
     "Bookcase",
   ];
 
-  const slides = categories.map((category) => (
-    <div className="category">
+  const slides = categories.map((category, index) => (
+    <div key={index} className="category">
       <div className="picture-container">
         <div className="picture" />
       </div>
@@ -23,7 +23,12 @@ function ProductCategories() {
     <div className="product-categories">
       <div className="product-categories-content">
         <h1>Explore more furniture categories</h1>
-        <InfiniteCarousel sliderActive={true} slides={slides} parts={3} />
+        <CategoriesCarousel
+          sliderActive={true}
+          slides={slides}
+          parts={3}
+          carouselHeight={400}
+        />
       </div>
     </div>
   );

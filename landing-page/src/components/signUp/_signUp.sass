@@ -4,42 +4,50 @@ div.signUp
     top: 0
     left: 0
     text-align: left
-    h2.title
-        margin: 0
-        font-size: 36px
-        line-height: 49px
-        padding-bottom: 30px
-        font-weight: 900
-    p.description
-        margin: 0
-        line-height: 22px
-        padding: 0 10px 45px 0
-    label
-        line-height: 21.86px
-        span
-            color: $red
-    input
-        padding: 0 20px
-        border: 1px solid $grey
-        border-radius: 2px
-        background-color: $light-white
-        height: 45px
-        &::placeholder
-            font-size: 16px
-            color: $grey
-    button.joinBtn
-        margin: 15px 0
-        width: auto
-    p.note
-        font-size: 14px
-        line-height: 19.12px
-        color: $dark-grey
-        padding: 0
-        letter-spacing: -0.022em
-        font-weight: 100
-        span
-            text-decoration: underline
-            cursor: pointer
+    .state
+        +flex(column, space-between, stretch)
+        text-align: left
+        div.icon
+            +bg-image(58px, 58px, './../assets/status_icon.svg')
+            margin: 30px auto 20px
+        h2.title
+            margin: 0
+            font-size: 36px
+            line-height: 49px
+            padding-bottom: 30px
+            font-weight: 900
+            &.success
+                text-align: center
+        p.description
+            margin: 0
+            line-height: 22px
+            padding: 0 10px 45px 0
+        label
+            line-height: 21.86px
+            span
+                color: $red
+        input
+            padding: 0 20px
+            border: 1px solid $grey
+            border-radius: 2px
+            background-color: $light-white
+            height: 45px
+            &::placeholder
+                font-size: 16px
+                color: $grey
+        button.joinBtn
+            margin: 15px 0
+            width: auto
+        p.note
+            font-size: 14px
+            line-height: 19.12px
+            color: $dark-grey
+            padding: 0
+            letter-spacing: -0.022em
+            font-weight: 100
+            span
+                text-decoration: underline
+                cursor: pointer
     div.close
         +bg-image(32px, 32px, './../assets/close.svg')
         position: absolute

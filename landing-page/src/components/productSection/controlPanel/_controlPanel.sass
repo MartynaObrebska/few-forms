@@ -4,6 +4,11 @@ div.controlPanel
     +container(399px, 0, $light-white, 5px)
     border-color: $light-grey
     text-align: left
+    +xlMaxBreakPoint
+        width: 100%
+        border: none
+        border-top: 1px solid $grey
+        border-radius: 0
     div.productTitle
         padding: 15px 0 15px 20px
         font-size: 30px
@@ -20,8 +25,15 @@ div.controlPanel
             line-height: 54px
     div.bottomSection
         +flex(row, flex-start)
+        +xlMaxBreakPoint
+            justify-content: space-between
+            +smMaxBreakPoint
+                flex-direction: column
+                align-items: stretch
         div.priceContainer
             margin-left: 25px
+            +smMaxBreakPoint
+                margin-top: 18px
             p.price
                 font-size: 24px
                 line-height: 33px
@@ -35,17 +47,22 @@ div.controlPanel
         button.joinBtn
             flex-grow: 1
             margin: 21px 25px 21px 20px
+            +xlMaxBreakPoint
+                flex-grow: 0
+                +smMaxBreakPoint
+                    flex-grow: 1
     div.note
         +flex(row, center, flex-start)
         margin: 20px 30px
         gap: 10px
         div.icon
             +bg-image(42px, 42px, './../assets/Measure.svg')
-            flex-grow: 1
         p
             width: 287px
             font-size: 13px
             font-weight: 100
+            +xlMaxBreakPoint
+                width: 100%
             span
                 font-size: 15px
                 font-weight: 900

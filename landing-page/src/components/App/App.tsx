@@ -35,6 +35,7 @@ function App() {
         productSectionRef={productSectionRef}
         handleHomeBtn={handleHomeBtn}
         handleOpenPopUp={handleOpenPopUp}
+        activePopUp={activePopUp}
       />
       <Header handleClickScroll={handleClickScroll} />
       <ProductSection

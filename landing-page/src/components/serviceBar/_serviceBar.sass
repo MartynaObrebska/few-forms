@@ -1,12 +1,16 @@
 div.serviceBar
-    +flex
+    +flex(row, space-evenly, center)
     height: 70px
     border-width: 1px 0px
     border-style: solid
     border-color: $grey
+    +lgMaxBreakPoint
+        height: 200px
+        +flex(column, space-around, flex-start)
     div.serviceBarItem
-        margin: 0 90px
         +flex
+        +lgMaxBreakPoint
+            margin-left: 28px
         div
             &.customise
                 +bg-image(20px, 22px, './../assets/customise_icon.svg')

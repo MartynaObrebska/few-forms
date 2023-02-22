@@ -25,7 +25,6 @@ const Gallery = () => {
       infiniteLoop
       renderThumbs={renderThumbs}
       showStatus={false}
-      width="820px"
       thumbWidth={144}
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}

@@ -8,13 +8,11 @@ div.underBar
     background-color: $light-green
     color: $green
     transition: .3s
+    +lgMaxBreakPoint
+        height: 29px
     div.status
         margin: 10px
-        height: 19px
-        width: 19px
-        background-image: url('./../assets/status_icon.svg')
-        background-repeat: no-repeat
-        background-size: contain
+        +bg-image(19px, 19px, './../assets/status_icon.svg')
     p
         font-size: 14px
     &.active

@@ -2,18 +2,30 @@
 
 div.picture
     +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
+    +xlMaxBreakPoint
+        background-size: contain
+        +lgMaxBreakPoint
+            background-size: cover
+            +mdMaxBreakPoint
+                background-size: contain
+                +smMaxBreakPoint
+                    height: 400px
     &.thumbPicture
         height: 85px
         cursor: pointer
 .carousel-root
     +flex(column, space-around)
+    width: 820px
+    +xlMaxBreakPoint
+        width: 100%
     .carousel
-        width: 820px
         div.arrow
             +center
             +bg-image(32px, 32px, './../assets/Arrows-light.svg')
             transform: translateX(0)
             z-index: 1
+            +xlMaxBreakPoint
+                display: none
             &:hover
                 background-image: url('./../assets/Arrows-dark.svg')
                 cursor: pointer
@@ -35,6 +47,8 @@ div.picture
             border-right: 8px solid $black
         .thumbs-wrapper
             margin: 0
+            +xlMaxBreakPoint
+                display: none
             .thumbs
                 margin: 0
                 padding: 0

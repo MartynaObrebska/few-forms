@@ -5,6 +5,11 @@ div.productSection
     min-height: 578px
     background-color: $dark-white
     padding: 60px 10px
+    +xlMaxBreakPoint
+        padding: 0
     div.content
         +flex(row, center, stretch)
         gap: 20px
+        +xlMaxBreakPoint
+            +flex(column)
+            gap: 7px

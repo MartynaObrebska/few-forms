@@ -6,26 +6,29 @@ interface Props {
   productSectionRef: MutableRefObject<HTMLDivElement | null>;
   handleHomeBtn: () => void;
   handleOpenPopUp: () => void;
+  activePopUp: boolean;
 }
 
 function TopMenu(props: Props) {
-  const { productSectionRef, handleHomeBtn, handleOpenPopUp } = props;
+  const { productSectionRef, handleHomeBtn, handleOpenPopUp, activePopUp } =
+    props;
   const [activeTopMenu, setActiveTopMenu] = useState(true);
   const [scrollValue, setScrollValue] = useState(0);
   const topMenuClassName = `topMenu${activeTopMenu ? "" : "  disabled"}`;
 
   useEffect(() => {
+    if (activePopUp) setActiveTopMenu(true);
     const handleScroll = () => {
-      const scrolled = window.scrollY;
-      setActiveTopMenu(scrolled <= scrollValue);
-      setScrollValue(scrolled);
+      const verticalScrollValue = window.scrollY;
+      setActiveTopMenu(verticalScrollValue <= scrollValue);
+      setScrollValue(verticalScrollValue);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollValue]);
+  }, [scrollValue, activePopUp]);
 
   return (
     <div className={topMenuClassName}>
@@ -37,6 +40,7 @@ function TopMenu(props: Props) {
         <JoinBtn handleClick={handleOpenPopUp} />
       </div>
       <UnderBar
+        activePopUp={activePopUp}
         scrollValue={scrollValue}
         productSectionRef={productSectionRef}
       />

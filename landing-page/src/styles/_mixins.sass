@@ -27,3 +27,31 @@
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+// Breakpoints
+=smMaxBreakPoint
+    @media (max-width: $screen-sm)
+        @content
+
+=mdMaxBreakPoint
+    @media (max-width: $screen-md)
+        @content
+
+=lgMaxBreakPoint
+    @media (max-width: $screen-lg)
+        @content
+
+=xlMaxBreakPoint
+    @media (max-width: $screen-xl)
+        @content
+
+=wrapperMaxBreakPoint
+    @media (max-width: $wrapper)
+        @content
+
+=customMinBreakPoint($size)
+    @media (min-width: $size+'px')
+        @content
+
+=customMaxBreakPoint($size)
+    @media (max-width: $size+'px')
+        @content

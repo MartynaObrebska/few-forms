@@ -3,14 +3,16 @@ import React, { MutableRefObject, useEffect, useState } from "react";
 interface Props {
   scrollValue: number;
   productSectionRef: MutableRefObject<HTMLDivElement | null>;
+  activePopUp: boolean;
 }
 
 function UnderBar(props: Props) {
-  const { productSectionRef, scrollValue } = props;
+  const { productSectionRef, scrollValue, activePopUp } = props;
   const [activeUnderBar, setActiveUnderBar] = useState(false);
   const underBarClassName = `underBar${activeUnderBar ? " active" : ""}`;
 
   useEffect(() => {
+    if (activePopUp) setActiveUnderBar(false);
     let timeoutIndex: NodeJS.Timeout | undefined;
     const isScrolledToProductSection =
       productSectionRef.current &&
@@ -26,7 +28,7 @@ function UnderBar(props: Props) {
     return () => {
       clearTimeout(timeoutIndex);
     };
-  }, [activeUnderBar, productSectionRef, scrollValue]);
+  }, [activeUnderBar, productSectionRef, scrollValue, activePopUp]);
 
   return (
     <div className={underBarClassName}>

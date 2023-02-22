@@ -18,6 +18,15 @@ div.header
         text-align: left
         color: $light-white
         font-weight: 900
+        +xlMaxBreakPoint
+            top: 110px
+            bottom: auto
+            +lgMaxBreakPoint
+                left: 30px
+                font-size: 36px
+                width: 324px
+                +smMaxBreakPoint
+                    width: auto
     button.seeMore
         position: absolute
         left: 50%
@@ -35,6 +44,8 @@ div.header
         left: auto
         right: 100px
         transform: translateY(-50%)
+        +xlMaxBreakPoint
+            display: none
         h2.title
             text-align: center
         div.close

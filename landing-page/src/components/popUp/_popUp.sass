@@ -5,10 +5,21 @@ div.popUp
     z-index: 10
     width: 100%
     height: 100vh
+    +smMaxBreakPoint
+        margin-top: 61px
     div.background
         width: 100%
         height: 100%
         background-color: $black
         opacity: 0.8
     div.signUp
+        padding: 30px 40px
         +center
+        +smMaxBreakPoint
+            box-sizing: border-box
+            width: 100%
+            height: 100%
+            justify-content: flex-start
+            border-radius: 0
+            border: none
+            padding: 60px 40px

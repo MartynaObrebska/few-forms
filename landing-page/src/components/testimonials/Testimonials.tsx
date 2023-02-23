@@ -7,10 +7,14 @@ interface Props {
 }
 
 function Testimonials(props: Props) {
-  const defaultSlidesToShow = 4.57;
-  const [slidesToShow, setSlidesToShow] = useState(defaultSlidesToShow);
-  const reviewsContainerRef = useRef<HTMLDivElement | null>(null);
-
+  const slideWidth = 315;
+  const calculateSlidesToShow = () => {
+    if (document.body.clientWidth >= 1440) return 1440 / slideWidth;
+    return document.body.clientWidth / slideWidth;
+  };
+  const [slidesToShow, setSlidesToShow] = useState<number | undefined>(
+    calculateSlidesToShow()
+  );
   const reviews = [
     "@mmlstudio",
     "@mmlstudio",
@@ -20,12 +24,6 @@ function Testimonials(props: Props) {
     "@mmlstudio",
     "@mmlstudio",
   ];
-  const slideWidth = 315;
-  const calculateSlidesToShow = () => {
-    return reviewsContainerRef.current
-      ? reviewsContainerRef.current.clientWidth / slideWidth
-      : defaultSlidesToShow;
-  };
 
   const resizeHandler = useCallback(() => {
     setSlidesToShow(calculateSlidesToShow());
@@ -48,7 +46,7 @@ function Testimonials(props: Props) {
           into Space System furniture.
         </p>
         <JoinBtn handleClick={props.handleOpenPopUp} />
-        <div ref={reviewsContainerRef} className="reviewsContainer">
+        <div className="reviewsContainer">
           <Slider
             slidesToShow={slidesToShow}
             centerMode={true}

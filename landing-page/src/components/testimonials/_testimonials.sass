@@ -11,16 +11,24 @@
         h1
             color: $blue
             font-size: 36px
+            line-height: 50px
+            +lgMaxBreakPoint
+                font-size: 30px
+                line-height: 41px
         p.description
             width: 620px
             color: $blue
             font-size: 24px
+            +lgMaxBreakPoint
+                font-size: 20px
+                width: 100%
         button.joinBtn
             width: 300px
         div.reviewsContainer
             position: relative
             height: 340px
             width: 100%
+            margin-top: 30px
             overflow: hidden
             .review-container
                 padding: 0 10px
@@ -44,12 +52,14 @@
                 z-index: 2
                 border: none
                 background-color: transparent
+                +lgMaxBreakPoint
+                    display: none
                 &:hover
                     background-image: url('./../assets/Arrows-black.svg')
                     cursor: pointer
                 &.carousel-prev
                     left: 90px
-                    transform: rotate(180deg)
+                    transform: translate(0, -50%) rotate(180deg)
                     &::before
                         content: none
                 &.carousel-next

@@ -33,13 +33,13 @@ div.header
         bottom: 27px
         transform: translateX(-50%)
         color: $light-white
+        background: none
         +lgMaxBreakPoint
             bottom: 21px
         &.seeMore
             height: 45px
             width: 283px
             font-size: 16px
-            background: none
             border: 2px solid $light-white
             border-radius: 22.5px
             +lgMaxBreakPoint
@@ -47,6 +47,7 @@ div.header
         &.swipe
             display: none
             font-size: 16px
+            border: none
             +lgMaxBreakPoint
                 +flex(column)
             p

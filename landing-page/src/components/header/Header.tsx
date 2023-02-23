@@ -10,9 +10,7 @@ function Header(props: Props) {
       title: "Available soon. Join the waitlist!",
       description:
         "The custom-fit furniture changing with you is almost here! Sign up for our product waitlist now to be the first to know when it becomes available. We'll send you a notification as soon as it's ready for purchase.",
-      note: `Common table is made of natural solid and ${(
-        <span>read more</span>
-      )}`,
+      note: `Common table is made of natural solid`,
     },
     successState: {
       title: "You have joined the waitlist!",
@@ -28,10 +26,10 @@ function Header(props: Props) {
       <button className="seeMore down" onClick={props.handleClickScroll}>
         See more
       </button>
-      <div className="swipe down">
+      <button className="swipe down" onClick={props.handleClickScroll}>
         <p>swipe down</p>
         <div className="arrow" />
-      </div>
+      </button>
       <SignUp content={content} />
     </div>
   );

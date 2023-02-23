@@ -27,18 +27,33 @@ div.header
                 width: 324px
                 +smMaxBreakPoint
                     width: auto
-    button.seeMore
+    .down
         position: absolute
         left: 50%
         bottom: 27px
         transform: translateX(-50%)
-        height: 45px
-        width: 283px
-        font-size: 16px
         color: $light-white
-        background: none
-        border: 2px solid $light-white
-        border-radius: 22.5px
+        +lgMaxBreakPoint
+            bottom: 21px
+        &.seeMore
+            height: 45px
+            width: 283px
+            font-size: 16px
+            background: none
+            border: 2px solid $light-white
+            border-radius: 22.5px
+            +lgMaxBreakPoint
+                display: none
+        &.swipe
+            display: none
+            font-size: 16px
+            +lgMaxBreakPoint
+                +flex(column)
+            p
+                margin-bottom: 8px
+                line-height: 20.49px
+            .arrow
+                +bg-image(9px, 18px, './../assets/Arrow-down-white.svg')
     div.signUp
         top: 50%
         left: auto

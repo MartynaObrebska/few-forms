@@ -25,9 +25,13 @@ function Header(props: Props) {
     <div className="header">
       <div className="shadow"></div>
       <div className="title">First custom-fit furniture changing with you.</div>
-      <button className="seeMore" onClick={props.handleClickScroll}>
+      <button className="seeMore down" onClick={props.handleClickScroll}>
         See more
       </button>
+      <div className="swipe down">
+        <p>swipe down</p>
+        <div className="arrow" />
+      </div>
       <SignUp content={content} />
     </div>
   );

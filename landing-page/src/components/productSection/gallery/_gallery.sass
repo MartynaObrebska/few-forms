@@ -1,23 +1,23 @@
 @import './../../../../node_modules/react-responsive-carousel/lib/styles/carousel'
 
-div.picture
-    +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
-    +xlMaxBreakPoint
-        background-size: contain
-        +lgMaxBreakPoint
-            background-size: cover
-            +mdMaxBreakPoint
-                background-size: contain
-                +smMaxBreakPoint
-                    height: 400px
-    &.thumbPicture
-        height: 85px
-        cursor: pointer
 .carousel-root
     +flex(column, space-around)
     width: 820px
     +xlMaxBreakPoint
         width: 100%
+    div.picture
+        +bg-image(473px, 100%, './../assets/Sideboard_picture.svg', cover)
+        +xlMaxBreakPoint
+            background-size: contain
+            +lgMaxBreakPoint
+                background-size: cover
+                +mdMaxBreakPoint
+                    background-size: contain
+                    +smMaxBreakPoint
+                        height: 400px
+        &.thumbPicture
+            height: 85px
+            cursor: pointer
     .carousel
         div.arrow
             +center

@@ -1,6 +1,7 @@
-@import 'categoriesCarousel/_categoriesCarousel'
+@import 'categoriesCarouselDesktop/_categoriesCarouselDesktop'
+@import 'categoriesCarouselMobile/_categoriesCarouselMobile'
 
-.product-categories
+.product-categories-desktop
     height: 637px
     background-color: $dark-white
     &-content
@@ -24,3 +25,25 @@
                 font-size: 30px
                 line-height: 118px
                 color: $light-white
+
+.product-categories-mobile
+    height: 637px
+    background-color: $dark-white
+    +lgMaxBreakPoint
+        height: 468px
+    &-content
+        +flex(column)
+        height: 100%
+        gap: 30px
+        max-width: 1440px
+        margin: 0 auto
+        +lgMaxBreakPoint
+
+        h1
+            font-size: 36px
+            font-weight: 900
+            +lgMaxBreakPoint
+                font-size: 24px
+            span
+                +lgMaxBreakPoint
+                    display: none

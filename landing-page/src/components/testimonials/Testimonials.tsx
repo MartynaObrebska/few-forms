@@ -8,8 +8,10 @@ interface Props {
 
 function Testimonials(props: Props) {
   const slideWidth = 315;
+  const wrapperWidth = 1440;
   const calculateSlidesToShow = () => {
-    if (document.body.clientWidth >= 1440) return 1440 / slideWidth;
+    if (document.body.clientWidth >= wrapperWidth)
+      return wrapperWidth / slideWidth;
     return document.body.clientWidth / slideWidth;
   };
   const [slidesToShow, setSlidesToShow] = useState<number | undefined>(

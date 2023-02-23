@@ -8,7 +8,7 @@ interface Props {
   transitionSpeed?: number;
 }
 
-function CategoriesCarousel(props: Props) {
+function CategoriesCarouselDesktop(props: Props) {
   const { sliderActive, slides, parts, carouselHeight } = props;
 
   const [visiblePart, setVisiblePart] = useState(0);
@@ -77,4 +77,4 @@ function CategoriesCarousel(props: Props) {
   );
 }
 
-export default CategoriesCarousel;
+export default CategoriesCarouselDesktop;

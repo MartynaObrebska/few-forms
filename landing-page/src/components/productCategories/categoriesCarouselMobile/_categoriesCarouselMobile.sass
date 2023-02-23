@@ -1,0 +1,78 @@
+.categories-carousel-container
+    +flex(column)
+    gap: 30px
+    width: 100%
+    .carousel-root
+        width: 100%
+        .slider
+            .category-container
+                +lgMaxBreakPoint
+                    margin-bottom: 46px
+                .category
+                    +container(295px, 0, $blue, 5px)
+                    margin: 0 auto
+                    .picture-container
+                        height: 280px
+                        overflow: hidden
+                        +lgMaxBreakPoint
+                            height: 217px
+                        div.picture
+                            +bg-image(280px, 295px, './../assets/category.svg', cover)
+                            +lgMaxBreakPoint
+                                height: 217px
+                    .name
+                        height: 118px
+                        font-size: 30px
+                        line-height: 118px
+                        color: $light-white
+                        +lgMaxBreakPoint
+                            height: 90px
+                            font-size: 24px
+                            line-height: 90px
+        .arrow
+            +center
+            +bg-image(35px, 35px, './../assets/Arrows-black.svg')
+            z-index: 2
+            transform: translateX(0)
+            +lgMaxBreakPoint
+                display: none
+            &:hover
+                cursor: pointer
+            &.left
+                left: 28px
+                transform: rotate(180deg)
+            &.right
+                left: auto
+                right: 28px
+            &.disabled
+                background-image: url('./../assets/Arrows-light.svg')
+                cursor: auto
+        .control-dots
+            display: none
+            bottom: 0
+            margin: 0
+            +lgMaxBreakPoint
+                display: block
+            .dot
+                box-shadow: none
+                background-color: $black
+                width: 10px
+                height: 10px
+.slide-container
+    position: relative
+    height: 8px
+    width: 400px
+    background-color: $light-white
+    border-radius: 10px
+    overflow: hidden
+    +lgMaxBreakPoint
+        display: none
+    .slider
+        position: absolute
+        top: 0
+        left: 0
+        width: 100px
+        height: 8px
+        background-color: $black
+        border-radius: 10px
+        transition: .3s

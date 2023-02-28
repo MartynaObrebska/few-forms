@@ -17,7 +17,7 @@ div.header
         font-size: 64px
         text-align: left
         color: $light-white
-        font-weight: 900
+        font-weight: 700
         +xlMaxBreakPoint
             top: 110px
             bottom: auto
@@ -42,8 +42,14 @@ div.header
             font-size: 16px
             border: 2px solid $light-white
             border-radius: 22.5px
+            line-height: 45px
+            font-weight: 300
             +lgMaxBreakPoint
                 display: none
+            &:hover
+                background-color: $light-white
+                color: $black
+                font-weight: 500
         &.swipe
             display: none
             font-size: 16px

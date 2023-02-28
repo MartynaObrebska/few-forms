@@ -1,5 +1,5 @@
 .testimonials
-    height: 710px
+    height: auto
     background-color: $light-blue
     border-top: 1px solid $grey
     &-content
@@ -8,33 +8,48 @@
         height: 100%
         max-width: 1440px
         margin: 0 auto
+        +smMaxBreakPoint
+            align-items: stretch
         h1
             color: $blue
             font-size: 36px
             line-height: 50px
+            padding-top: 4px
+            margin-top: 60px
             +lgMaxBreakPoint
+                margin-top: 30px
                 font-size: 30px
                 line-height: 41px
         p.description
             width: 620px
             color: $blue
             font-size: 24px
+            line-height: 32.78px
+            padding: 0 26px
             +lgMaxBreakPoint
                 font-size: 20px
-                width: 100%
-        button.joinBtn
+                width: auto
+        .joinBtn
             width: 300px
-        div.reviewsContainer
+            margin: 0
+            +smMaxBreakPoint
+                margin: 0 26px
+                width: auto
+        .reviews-container
             position: relative
             height: 340px
             width: 100%
-            margin-top: 30px
             overflow: hidden
+            margin-bottom: 60px
+            +lgMaxBreakPoint
+                margin-top: 30px
             .review-container
                 padding: 0 10px
                 div.review
                     +container(293px, 0, $dark-white, 5px)
                     overflow: hidden
+                    +smMaxBreakPoint
+                        width: 228px
                     div.pictureContainer
                         height: 200px
                         overflow: hidden
@@ -43,7 +58,7 @@
                     div.textContainer
                         margin: 15px 20px
                         +flex(column, space-between)
-                        text-align: justify
+                        text-align: left
                         height: 108px
             .carousel-arrow
                 +center

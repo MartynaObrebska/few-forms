@@ -1,18 +1,20 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 import Slider from "infinite-react-carousel";
+import { screenLg, screenSm, screenWrapper } from "../../utility/breakpoints";
 
 interface Props {
   handleOpenPopUp: () => void;
 }
 
 function Testimonials(props: Props) {
-  const slideWidth = 315;
-  const wrapperWidth = 1440;
+  const slideWidth = document.body.offsetWidth > screenSm ? 315 : 250;
   const calculateSlidesToShow = () => {
-    if (document.body.clientWidth >= wrapperWidth)
-      return wrapperWidth / slideWidth;
-    return document.body.clientWidth / slideWidth;
+    const isScreenWiderThanWrapper = document.body.offsetWidth <= screenWrapper;
+    const widthToConsider = isScreenWiderThanWrapper
+      ? document.body.offsetWidth
+      : screenWrapper;
+    return widthToConsider / slideWidth;
   };
   const [slidesToShow, setSlidesToShow] = useState<number | undefined>(
     calculateSlidesToShow()
@@ -26,6 +28,11 @@ function Testimonials(props: Props) {
     "@mmlstudio",
     "@mmlstudio",
   ];
+
+  const description = {
+    long: "Meet the community of People and of Interior Designer, that believe into Space System furniture.",
+    short: "Community of Consumer and Interior Designer, that already joined!.",
+  };
 
   const resizeHandler = useCallback(() => {
     setSlidesToShow(calculateSlidesToShow());
@@ -44,11 +51,12 @@ function Testimonials(props: Props) {
       <div className="testimonials-content">
         <h1 className="title">Reviews</h1>
         <p className="description">
-          Meet the community of People and of Interior Designer, that believe
-          into Space System furniture.
+          {document.body.offsetWidth > screenLg
+            ? description.long
+            : description.short}
         </p>
         <JoinBtn handleClick={props.handleOpenPopUp} />
-        <div className="reviewsContainer">
+        <div className="reviews-container">
           <Slider
             slidesToShow={slidesToShow}
             centerMode={true}

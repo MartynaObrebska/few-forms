@@ -16,7 +16,7 @@ function UnderBar(props: Props) {
     let timeoutIndex: NodeJS.Timeout | undefined;
     const isScrolledToProductSection =
       productSectionRef.current &&
-      scrollValue >= productSectionRef.current.offsetTop &&
+      scrollValue + 1 >= productSectionRef.current.offsetTop &&
       !activeUnderBar;
 
     if (isScrolledToProductSection) {

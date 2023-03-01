@@ -28,6 +28,8 @@ const Gallery = () => {
       thumbWidth={144}
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
+      swipeable={true}
+      emulateTouch={true}
     >
       {pictures.map((picture, index) => (
         <div key={index} className={`picture ${picture}`} />

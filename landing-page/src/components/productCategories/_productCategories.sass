@@ -1,32 +1,7 @@
 @import 'categoriesCarouselDesktop/_categoriesCarouselDesktop'
 @import 'categoriesCarouselMobile/_categoriesCarouselMobile'
 
-.product-categories-desktop
-    height: 637px
-    background-color: $dark-white
-    &-content
-        +flex(column)
-        height: 100%
-        gap: 30px
-        max-width: 1440px
-        margin: 0 auto
-        h1
-            font-size: 36px
-            font-weight: 900
-        .category
-            +container(295px, 0, $blue, 5px)
-            .picture-container
-                height: 280px
-                overflow: hidden
-                .picture
-                    +bg-image(280px, 295px, './../assets/category.svg', cover)
-            .name
-                height: 118px
-                font-size: 30px
-                line-height: 118px
-                color: $light-white
-
-.product-categories-mobile
+.product-categories
     height: 637px
     background-color: $dark-white
     +lgMaxBreakPoint
@@ -37,8 +12,6 @@
         gap: 30px
         max-width: 1440px
         margin: 0 auto
-        +lgMaxBreakPoint
-
         h1
             font-size: 36px
             font-weight: 900

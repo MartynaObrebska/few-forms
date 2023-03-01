@@ -29,7 +29,19 @@ body
         font-family: 'Avenir', sans-serif
         cursor: pointer
     input
-        padding: 0 20px
+        padding: 4px 20px 0
+        font-family: 'Avenir', sans-serif
+        font-size: 16px
+        color: $black
+        border: 1px solid $grey
+        border-radius: 2px
+        background-color: $light-white
+        height: 45px
         &::placeholder
             font-family: 'Avenir', sans-serif
             font-weight: 300
+            font-size: 16px
+            color: $grey
+        &:hover, &:focus, &:focus-visible, &:focus-within
+            border-color: $black
+            outline: none

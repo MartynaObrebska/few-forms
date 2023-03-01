@@ -55,11 +55,14 @@
                         overflow: hidden
                         div.picture
                             +bg-image(200px, 300px, './../assets/review.svg', cover)
+                            +smMaxBreakPoint
+                                width: 228px
                     div.textContainer
                         margin: 15px 20px
-                        +flex(column, space-between)
-                        text-align: left
+                        +flex(column, space-between, flex-start)
                         height: 108px
+                        line-height: 22px
+                        text-align: left
             .carousel-arrow
                 +center
                 +bg-image(35px, 35px, './../assets/Arrows-white.svg')

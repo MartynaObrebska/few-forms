@@ -16,6 +16,8 @@ const AccordionTab = (props: Props) => {
   const isActive = activeLabel === index;
   const activeToggle = isActive ? " active" : "";
   const handleClickLabel = () => setActiveLabel(isActive ? null : index);
+  const maxHeight =
+    isActive && contentRef.current ? contentRef.current.clientHeight : 0;
 
   return (
     <div key={index} className="tab">
@@ -26,10 +28,7 @@ const AccordionTab = (props: Props) => {
       <div
         className={`tab-content-wrapper${activeToggle}`}
         style={{
-          maxHeight:
-            isActive && contentRef.current
-              ? contentRef.current.clientHeight
-              : 0,
+          maxHeight: maxHeight,
         }}
       >
         <div ref={contentRef} className={`tab-content${activeToggle}`}>

@@ -19,10 +19,12 @@ interface Props {
 function SignUp(props: Props) {
   const { content, handleClosePopUp } = props;
 
-  const [state, setState] = useState<"default" | "success">("default");
+  const [signUpState, setSignUpState] = useState<"default" | "success">(
+    "default"
+  );
 
   const handleJoinBtnClick = () => {
-    setState("success");
+    setSignUpState("success");
   };
 
   const defaultState = (
@@ -54,7 +56,7 @@ function SignUp(props: Props) {
   return (
     <div className="signUp">
       <div className="close" onClick={handleClosePopUp} />
-      {state === "default" ? defaultState : succesState}
+      {signUpState === "default" ? defaultState : succesState}
     </div>
   );
 }

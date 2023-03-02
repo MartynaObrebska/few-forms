@@ -1,60 +1,22 @@
-div.productCategories
-    +flex(column)
+@import 'categoriesCarouselDesktop/_categoriesCarouselDesktop'
+@import 'categoriesCarouselMobile/_categoriesCarouselMobile'
+
+.product-categories
     height: 637px
-    gap: 30px
     background-color: $dark-white
-    h1
-        font-size: 36px
-        font-weight: 900
-    div.categoriesContainer
-        position: relative
-        height: 400px
-        width: 1440px
-        overflow: hidden
-        div.categoriesList
-            position: absolute
-            top: 0
-            left: 100px
-            +flex
-            gap: 20px
-            div.category
-                +container(295px, 0, $blue, 5px)
-                div.pictureContainer
-                    height: 280px
-                    overflow: hidden
-                    div.picture
-                        +bg-image(280px, 295px, './../assets/category.svg', cover)
-                div.name
-                    height: 118px
-                    font-size: 30px
-                    line-height: 118px
-                    color: $light-white
-        div.arrow
-            +center
-            +bg-image(35px, 35px, './../assets/Arrows-black.svg')
-            transform: translateX(0)
-            &:hover
-                cursor: pointer
-            &.left
-                left: 28px
-            &.right
-                left: auto
-                right: 28px
-            &.disabled
-                background-image: url('./../assets/Arrows-light.svg')
-                cursor: auto
-    div.orderBar
-        position: relative
-        height: 8px
-        width: 400px
-        background-color: $light-white
-        border-radius: 10px
-        overflow: hidden
-        div.number
-            position: absolute
-            top: 0
-            left: 0
-            width: 80px
-            height: 8px
-            background-color: $black
-            border-radius: 10px
+    +lgMaxBreakPoint
+        height: 468px
+    &-content
+        +flex(column)
+        height: 100%
+        gap: 30px
+        max-width: 1440px
+        margin: 0 auto
+        h1
+            font-size: 36px
+            font-weight: 900
+            +lgMaxBreakPoint
+                font-size: 24px
+            span
+                +lgMaxBreakPoint
+                    display: none

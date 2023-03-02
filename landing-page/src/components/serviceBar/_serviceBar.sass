@@ -1,12 +1,24 @@
-div.serviceBar
-    +flex
+.serviceBar
+    +flex(row, space-evenly, center)
     height: 70px
     border-width: 1px 0px
     border-style: solid
     border-color: $grey
-    div.serviceBarItem
-        margin: 0 90px
+    +lgMaxBreakPoint
+        height: 200px
+        +flex(column, space-around, flex-start)
+    .serviceBarItem
         +flex
+        +lgMaxBreakPoint
+            margin: 0 25px
+            border-width: 1px 0px
+            border-style: solid
+            border-color: $dark-white
+            height: 100%
+            align-self: stretch
+            justify-content: flex-start
+            +mdMaxBreakPoint
+                position: relative
         div
             &.customise
                 +bg-image(20px, 22px, './../assets/customise_icon.svg')
@@ -15,9 +27,43 @@ div.serviceBar
             &.return
                 +bg-image(16px, 19px, './../assets/return_icon.svg')
             &.info
+                position: relative
                 +bg-image(18px, 18px, './../assets/info_icon.svg')
+                opacity: 0.6
+                +smMaxBreakPoint
+                    position: static
+                .tooltip
+                    +container(325px, 22px 20px, $light-grey, 2px)
+                    border: none
+                    visibility: hidden
+                    position: absolute
+                    z-index: 1
+                    top: calc(100% + 32px)
+                    left: -150px
+                    font-size: 15px
+                    line-height: 20px
+                    text-align: left
+                    +smMaxBreakPoint
+                        top: 100%
+                        left: 50%
+                        transform: translateX(-50%)
+                    &::after
+                        content: " "
+                        position: absolute
+                        bottom: 100%
+                        left: 160px
+                        margin-left: -22px
+                        border-width: 22px
+                        border-style: solid
+                        border-color: transparent transparent $light-grey transparent
+                        +smMaxBreakPoint
+                            border: none
+
                 &:hover
-                    +bg-image(18px, 18px, './../assets/info_icon-Type=Hoover.svg')
+                    opacity: 1
                     cursor: pointer
+                    .tooltip
+                        visibility: visible
         p
             margin: 0 12px
+            padding-top: 4px

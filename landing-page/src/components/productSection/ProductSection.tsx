@@ -1,32 +1,18 @@
 import React from "react";
+import Gallery from "./gallery/Gallery";
 import ControlPanel from "./controlPanel/ControlPanel";
 
-function ProductSection() {
-  const pictures = [
-    "picture1",
-    "picture2",
-    "picture3",
-    "picture4",
-    "picture5",
-    "picture6",
-  ];
+interface Props {
+  productSectionRef: React.MutableRefObject<HTMLDivElement | null>
+  handleOpenPopUp: () => void;
+}
+
+function ProductSection(props: Props) {
   return (
-    <div className="productSection">
+    <div ref={props.productSectionRef} id="productSection" className="productSection">
       <div className="content">
-        <div className="gallery">
-          <div className="picture">
-            <div className="arrow left" />
-            <div className="arrow right" />
-          </div>
-          <div className="pictureList">
-            <ul>
-              {pictures.map((picture, index) => (
-                <li key={index} className={`listPicture ${picture}`} />
-              ))}
-            </ul>
-          </div>
-        </div>
-        <ControlPanel />
+        <Gallery />
+        <ControlPanel handleOpenPopUp={props.handleOpenPopUp} />
       </div>
     </div>
   );

@@ -1,0 +1,40 @@
+.accordion
+    .tab
+        border-top: 1px solid $dark-white
+        overflow: hidden
+        &-label
+            +flex(row, flex-start)
+            margin-left: 28px
+            height: 53px
+            cursor: pointer
+            &-plus
+                +bg-image(10px,10px, './../assets/plus-dark.svg')
+                opacity: .4
+                margin-right: 9px
+                transition: .1s
+                &.active
+                    opacity: 1
+                    width: 10px
+                    height: 10px
+                    transform: rotate(45deg)
+            &-name
+                font-weight: 300
+                transition: .3s
+                padding-top: 4px
+                &.active
+                    font-weight: 900
+            &:hover
+                .tab-label-plus
+                    opacity: 1
+                .tab-label-name
+                    font-weight: 500
+        .tab-content-wrapper
+            font-size: 15px
+            font-weight: 300
+            line-height: 20px
+            letter-spacing: 0.022em
+            color: $dark-grey
+            transition: .3s
+            overflow: hidden
+            div.tab-content
+                padding: 0 20px 10px 48px

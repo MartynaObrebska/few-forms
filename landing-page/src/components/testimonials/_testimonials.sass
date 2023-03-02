@@ -1,48 +1,89 @@
-div.testimonials
-    +flex(column)
-    gap: 30px
-    height: 710px
+.testimonials
+    height: auto
     background-color: $light-blue
     border-top: 1px solid $grey
-    h1
-        color: $blue
-        font-size: 36px
-    p.description
-        width: 620px
-        color: $blue
-        font-size: 24px
-    button
-        width: 300px
-    div.reviewsContainer
-        position: relative
-        height: 340px
-        width: 1440px
-        overflow: hidden
-        div.reviewsList
-            +flex
-            gap: 20px
-            div.review
-                +container(293px, 0, $dark-white, 5px)
-                div.pictureContainer
-                    height: 200px
+    &-content
+        +flex(column)
+        gap: 30px
+        height: 100%
+        max-width: 1440px
+        margin: 0 auto
+        +smMaxBreakPoint
+            align-items: stretch
+        h1
+            color: $blue
+            font-size: 36px
+            line-height: 50px
+            padding-top: 4px
+            margin-top: 60px
+            +lgMaxBreakPoint
+                margin-top: 30px
+                font-size: 30px
+                line-height: 41px
+        p.description
+            width: 620px
+            color: $blue
+            font-size: 24px
+            line-height: 32.78px
+            padding: 0 26px
+            +lgMaxBreakPoint
+                font-size: 20px
+                width: auto
+        .joinBtn
+            width: 300px
+            margin: 0
+            +smMaxBreakPoint
+                margin: 0 26px
+                width: auto
+        .reviews-container
+            position: relative
+            height: 340px
+            width: 100%
+            overflow: hidden
+            margin-bottom: 60px
+            +lgMaxBreakPoint
+                margin-top: 30px
+            .review-container
+                padding: 0 10px
+                div.review
+                    +container(293px, 0, $dark-white, 5px)
                     overflow: hidden
-                    div.picture
-                        +bg-image(200px, 300px, './../assets/review.svg', cover)
-                div.textContainer
-                    margin: 15px 20px
-                    +flex(column, space-between)
-                    text-align: justify
-                    height: 108px
-        div.arrow
-            +center
-            +bg-image(35px, 35px, './../assets/Arrows-white.svg')
-            transform: translate(0)
-            &:hover
-                background-image: url('./../assets/Arrows-black.svg')
-                cursor: pointer
-            &.left
-                left: 90px
-                transform: rotate(180deg)
-            &.right
-                left: auto
-                right: 90px
+                    +smMaxBreakPoint
+                        width: 228px
+                    div.pictureContainer
+                        height: 200px
+                        overflow: hidden
+                        div.picture
+                            +bg-image(200px, 300px, './../assets/review.svg', cover)
+                            +smMaxBreakPoint
+                                width: 228px
+                    div.textContainer
+                        margin: 15px 20px
+                        +flex(column, space-between, flex-start)
+                        height: 108px
+                        line-height: 22px
+                        text-align: left
+                        p.name
+                            text-decoration: underline
+            .carousel-arrow
+                +center
+                +bg-image(35px, 35px, './../assets/Arrows-white.svg')
+                transform: translate(0, -50%)
+                z-index: 2
+                border: none
+                background-color: transparent
+                +lgMaxBreakPoint
+                    display: none
+                &:hover
+                    background-image: url('./../assets/Arrows-black.svg')
+                    cursor: pointer
+                &.carousel-prev
+                    left: 90px
+                    transform: translate(0, -50%) rotate(180deg)
+                    &::before
+                        content: none
+                &.carousel-next
+                    left: auto
+                    right: 90px
+                    &::before
+                        content: none

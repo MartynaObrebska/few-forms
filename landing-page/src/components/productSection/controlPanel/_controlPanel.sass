@@ -1,15 +1,21 @@
+@import 'accordion/_accordion'
+
 div.controlPanel
     +container(399px, 0, $light-white, 5px)
     border-color: $light-grey
     text-align: left
-    div.title
-        padding: 15px 0 15px 20px
+    +xlMaxBreakPoint
+        width: 100%
+        border: none
+        border-top: 1px solid $grey
+        border-radius: 0
+    div.productTitle
+        padding: 18px 0 12px 20px
         font-size: 30px
         font-weight: 500
-        line-height: 41px
+        line-height: 37px
     div.productInfo
         +flex(column, space-between, stretch)
-        height: 322px
         background-color: $white
         border-width: 1px 0px
         border-style: solid
@@ -17,24 +23,10 @@ div.controlPanel
         p.title
             margin-left: 25px
             line-height: 54px
-
-        div.label
-            +flex(row, flex-start)
-            margin-left: 28px
-            height: 53px
-            border-top: 1px solid $dark-white
-            div.plus
-                +bg-image(10px,10px, './../assets/plus-light.svg')
-                margin-right: 9px
-            p
-                font-weight: 300
-            &hover
-                div.plus
-                    background-image: url('./../assets/plus-dark.svg')
-                p
-                    font-weight: 900
     div.bottomSection
         +flex(row, flex-start)
+        +xlMaxBreakPoint
+            justify-content: space-between
         div.priceContainer
             margin-left: 25px
             p.price
@@ -50,18 +42,23 @@ div.controlPanel
         button.joinBtn
             flex-grow: 1
             margin: 21px 25px 21px 20px
+            +xlMaxBreakPoint
+                flex-grow: 0
+                +smMaxBreakPoint
+                    flex-grow: 1
     div.note
         +flex(row, center, flex-start)
-        height: 96px
         margin: 20px 30px
         gap: 10px
+        line-height: 20.49px
         div.icon
             +bg-image(42px, 42px, './../assets/Measure.svg')
-            flex-grow: 1
         p
             width: 287px
             font-size: 13px
             font-weight: 100
+            +xlMaxBreakPoint
+                width: 100%
             span
                 font-size: 15px
                 font-weight: 900

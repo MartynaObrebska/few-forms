@@ -1,25 +1,17 @@
-import React from "react";
 import JoinBtn from "../../joinBtn/JoinBtn";
+import Accordion from "./accordion/Accordion";
 
-function ControlPanel() {
-  const labels = [
-    "Sizes",
-    "Colors",
-    "Storage features",
-    "Materials",
-    "Delivery & Assembly",
-  ];
+interface Props {
+  handleOpenPopUp: () => void;
+}
+
+function ControlPanel(props: Props) {
   return (
     <div className="controlPanel">
-      <div className="title">Sideboards</div>
+      <div className="productTitle">Sideboards</div>
       <div className="productInfo">
         <p className="title">Product info:</p>
-        {labels.map((label) => (
-          <div className="label">
-            <div className="plus" />
-            <p>{label}</p>
-          </div>
-        ))}
+        <Accordion />
       </div>
       <div className="bottomSection">
         <div className="priceContainer">
@@ -28,7 +20,7 @@ function ControlPanel() {
           </p>
           <p className="desc">Estimated price</p>
         </div>
-        <JoinBtn />
+        <JoinBtn handleClick={props.handleOpenPopUp} />
       </div>
       <div className="note">
         <div className="icon"></div>

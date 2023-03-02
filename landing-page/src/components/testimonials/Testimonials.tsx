@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 import Slider from "infinite-react-carousel";
 import { screenLg, screenSm, screenWrapper } from "../../utility/breakpoints";
@@ -39,7 +39,7 @@ function Testimonials(props: Props) {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", resizeHandler);
+    window.addEventListener("resize", resizeHandler, { passive: true });
 
     return () => {
       window.removeEventListener("resize", resizeHandler);

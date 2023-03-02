@@ -27,12 +27,14 @@ function App() {
 
   return (
     <div className="app">
-      <TopMenu
-        productSectionRef={productSectionRef}
-        activePopUp={activePopUp}
-        handleHomeBtn={handleHomeBtn}
-        handleOpenPopUp={handleOpenPopUp}
-      />
+      <Suspense fallback={<></>}>
+        <TopMenu
+          productSectionRef={productSectionRef}
+          activePopUp={activePopUp}
+          handleHomeBtn={handleHomeBtn}
+          handleOpenPopUp={handleOpenPopUp}
+        />
+      </Suspense>
       <Header handleClickScroll={handleClickScroll} />
       <Suspense fallback={<></>}>
         <BottomSection

@@ -1,4 +1,5 @@
 import SignUp from "../signUp/SignUp";
+import "./header.css";
 
 interface Props {
   handleClickScroll: () => void;

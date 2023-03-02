@@ -1,5 +1,6 @@
 import { useState } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
+import "./signUp.css";
 
 interface Props {
   content?: {

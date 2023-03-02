@@ -1,6 +1,8 @@
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { screenLg, screenWrapper } from "../../utility/breakpoints";
+import "./productCategories.css";
+
 const CategoriesCarouselDesktop = React.lazy(
   () => import("./categoriesCarouselDesktop/CategoriesCarouselDesktop")
 );

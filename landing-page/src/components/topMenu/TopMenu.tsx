@@ -1,6 +1,7 @@
-import React, { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 import UnderBar from "./underBar/UnderBar";
+import "./topMenu.css";
 
 interface Props {
   productSectionRef: MutableRefObject<HTMLDivElement | null>;

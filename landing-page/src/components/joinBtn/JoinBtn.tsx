@@ -1,4 +1,4 @@
-import React from "react";
+import "./joinBtn.css";
 
 interface Props {
   handleClick?: () => void;

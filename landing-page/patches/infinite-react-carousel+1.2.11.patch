@@ -1,0 +1,45 @@
+diff --git a/node_modules/infinite-react-carousel/lib/carousel/listener.js b/node_modules/infinite-react-carousel/lib/carousel/listener.js
+index 6feec9d..333e64b 100644
+--- a/node_modules/infinite-react-carousel/lib/carousel/listener.js
++++ b/node_modules/infinite-react-carousel/lib/carousel/listener.js
+@@ -250,9 +250,9 @@ function signupListener() {
+       wheel = settings.wheel;
+ 
+   if (swipe) {
+-    SliderRef.addEventListener('touchstart', this.handleCarouselTap);
+-    SliderRef.addEventListener('touchmove', this.handleCarouselDrag);
+-    SliderRef.addEventListener('touchend', this.handleCarouselRelease);
++    SliderRef.addEventListener('touchstart', this.handleCarouselTap,{ passive: true});
++    SliderRef.addEventListener('touchmove', this.handleCarouselDrag,{ passive: true});
++    SliderRef.addEventListener('touchend', this.handleCarouselRelease,{ passive: true});
+   } else {
+     SliderRef.removeEventListener('touchstart', this.handleCarouselTap);
+     SliderRef.removeEventListener('touchmove', this.handleCarouselDrag);
+@@ -260,21 +260,21 @@ function signupListener() {
+   }
+ 
+   if (accessibility) {
+-    SliderRef.addEventListener('keydown', this.handleKeyDown);
++    SliderRef.addEventListener('keydown', this.handleKeyDown,{ passive: true});
+   } else {
+     SliderRef.removeEventListener('keydown', this.handleKeyDown);
+   }
+ 
+   if (wheel) {
+-    SliderRef.addEventListener('wheel', this.handleWheel);
++    SliderRef.addEventListener('wheel', this.handleWheel,{ passive: true});
+   } else {
+     SliderRef.removeEventListener('wheel', this.handleWheel);
+   }
+ 
+-  SliderRef.addEventListener('mousedown', this.handleCarouselTap);
+-  SliderRef.addEventListener('mousemove', this.handleCarouselDrag);
+-  SliderRef.addEventListener('mouseup', this.handleCarouselRelease);
+-  SliderRef.addEventListener('mouseleave', this.handleCarouselRelease);
++  SliderRef.addEventListener('mousedown', this.handleCarouselTap,{ passive: true});
++  SliderRef.addEventListener('mousemove', this.handleCarouselDrag,{ passive: true});
++  SliderRef.addEventListener('mouseup', this.handleCarouselRelease,{ passive: true});
++  SliderRef.addEventListener('mouseleave', this.handleCarouselRelease,{ passive: true});
+ }
+ 
+ function removeListener() {

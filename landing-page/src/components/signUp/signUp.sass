@@ -1,3 +1,5 @@
+@import '../../styles/_mixins.sass'
+
 div.signUp
     position: absolute
     +container(300px)
@@ -8,7 +10,7 @@ div.signUp
         +flex(column, space-between, stretch)
         text-align: left
         div.icon
-            +bg-image(58px, 58px, './../assets/status_icon.svg')
+            +bg-image(58px, 58px, '../../assets/status_icon.svg')
             margin: 30px auto 20px
         h2.title
             margin: 0
@@ -40,7 +42,7 @@ div.signUp
                 text-decoration: underline
                 cursor: pointer
     div.close
-        +bg-image(32px, 32px, './../assets/close.svg')
+        +bg-image(32px, 32px, '../../assets/close.svg')
         opacity: .4
         position: absolute
         top: 20px

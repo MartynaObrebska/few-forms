@@ -1,3 +1,4 @@
+@import '../../styles/_mixins.sass'
 .serviceBar
     +flex(row, space-evenly, center)
     height: 70px
@@ -21,14 +22,14 @@
                 position: relative
         div
             &.customise
-                +bg-image(20px, 22px, './../assets/customise_icon.svg')
+                +bg-image(20px, 22px, '../../assets/customise_icon.svg')
             &.delivery
-                +bg-image(16px, 23px, './../assets/delivery_icon.svg')
+                +bg-image(16px, 23px, '../../assets/delivery_icon.svg')
             &.return
-                +bg-image(16px, 19px, './../assets/return_icon.svg')
+                +bg-image(16px, 19px, '../../assets/return_icon.svg')
             &.info
                 position: relative
-                +bg-image(18px, 18px, './../assets/info_icon.svg')
+                +bg-image(18px, 18px, '../../assets/info_icon.svg')
                 opacity: 0.6
                 +smMaxBreakPoint
                     position: static

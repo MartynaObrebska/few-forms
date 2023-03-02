@@ -20,11 +20,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run pack",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pack": "tar.exe acvf build.zip ./build/*"
+    "pack": "tar.exe acvf build.zip ./build/**"
   },
   "browserslist": {
     "production": [
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "patch-package": "^6.5.1"
   }
 }

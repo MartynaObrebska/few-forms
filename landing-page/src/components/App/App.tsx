@@ -1,13 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, Suspense, lazy } from "react";
 import TopMenu from "../topMenu/TopMenu";
-import ProductSection from "../productSection/ProductSection";
-import ServiceBar from "../serviceBar/ServiceBar";
-import ProductCategories from "../productCategories/ProductCategories";
-import Testimonials from "../testimonials/Testimonials";
 import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import PopUp from "../popUp/PopUp";
+import "./app.css";
 
+const BottomSection = lazy(() => import("./BottomSection/BottomSection"));
 function App() {
   const [activePopUp, setActivePopUp] = useState(false);
   const productSectionRef = useRef<HTMLDivElement | null>(null);
@@ -33,20 +29,19 @@ function App() {
     <div className="app">
       <TopMenu
         productSectionRef={productSectionRef}
+        activePopUp={activePopUp}
         handleHomeBtn={handleHomeBtn}
         handleOpenPopUp={handleOpenPopUp}
-        activePopUp={activePopUp}
       />
       <Header handleClickScroll={handleClickScroll} />
-      <ProductSection
-        productSectionRef={productSectionRef}
-        handleOpenPopUp={handleOpenPopUp}
-      />
-      <ServiceBar />
-      <ProductCategories />
-      <Testimonials handleOpenPopUp={handleOpenPopUp} />
-      <Footer />
-      {activePopUp && <PopUp handleClosePopUp={handleClosePopUp} />}
+      <Suspense fallback={<></>}>
+        <BottomSection
+          activePopUp={activePopUp}
+          productSectionRef={productSectionRef}
+          handleOpenPopUp={handleOpenPopUp}
+          handleClosePopUp={handleClosePopUp}
+        />
+      </Suspense>
     </div>
   );
 }

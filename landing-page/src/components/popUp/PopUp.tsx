@@ -1,5 +1,5 @@
-import React from "react";
 import SignUp from "../signUp/SignUp";
+import "./popUp.css";
 
 interface Props {
   handleClosePopUp: () => void;

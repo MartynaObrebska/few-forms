@@ -1,7 +1,9 @@
+@import '../../styles/_mixins.sass'
+
 div.header
     position: relative
     top: 0
-    +bg-image(calc(98vh), 100%, './../assets/Beauty-Sideboard-1.webp', cover)
+    +bg-image(calc(98vh), 100%, '../../assets/Beauty-Sideboard-1.webp', cover)
     div.shadow
         position: absolute
         width: 100%
@@ -26,6 +28,7 @@ div.header
                 left: 30px
                 font-size: 36px
                 width: 324px
+                line-height: 49.18px
                 +smMaxBreakPoint
                     width: auto
     .down
@@ -61,7 +64,7 @@ div.header
                 margin-bottom: 8px
                 line-height: 20.49px
             .arrow
-                +bg-image(9px, 18px, './../assets/Arrow-down-white.svg')
+                +bg-image(9px, 18px, '../../assets/Arrow-down-white.svg')
     div.signUp
         top: 50%
         left: auto

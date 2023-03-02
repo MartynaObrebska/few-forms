@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import JoinBtn from "../joinBtn/JoinBtn";
 import Slider from "infinite-react-carousel";
 import { screenLg, screenSm, screenWrapper } from "../../utility/breakpoints";
+import "./testimonials.css";
 
 interface Props {
   handleOpenPopUp: () => void;

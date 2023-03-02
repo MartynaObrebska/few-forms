@@ -1,4 +1,4 @@
-import React from "react";
+import "./serviceBar.css";
 
 function ServiceBar() {
   const titles = ["Customise online", "Fast delivery", "Easy change or return"];

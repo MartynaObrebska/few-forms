@@ -1,31 +1,13 @@
 import { useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 interface Props {
-  slidePercentage?: number;
+  slides: JSX.Element[];
+  slidePercentage: number | undefined;
 }
 function CategoriesCarouselMobile(props: Props) {
   const isCenterMode = document.body.clientWidth >= 600;
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
-
-  const categories = [
-    "Bookcase",
-    "Bookcase",
-    "Bookcase",
-    "Bookcase",
-    "Bookcase",
-  ];
-
-  const slides = categories.map((category, index) => (
-    <div key={index} className="category-container">
-      <div className="category">
-        <div className="picture-container">
-          <div className="picture" />
-        </div>
-        <div className="name">{category}</div>
-      </div>
-    </div>
-  ));
 
   const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean) => (
     <div onClick={onClickHandler} className="arrow left" />
@@ -44,8 +26,10 @@ function CategoriesCarouselMobile(props: Props) {
         showThumbs={false}
         renderArrowPrev={renderArrowPrev}
         renderArrowNext={renderArrowNext}
+        swipeable={true}
+        emulateTouch={true}
       >
-        {slides}
+        {props.slides}
       </Carousel>
     </div>
   );

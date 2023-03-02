@@ -21,13 +21,14 @@
     .carousel
         div.arrow
             +center
-            +bg-image(32px, 32px, './../assets/Arrows-light.svg')
+            +bg-image(32px, 32px, './../assets/Arrows-black.svg')
+            opacity: .1
             transform: translateX(0)
             z-index: 1
             +lgMaxBreakPoint
                 display: none
             &:hover
-                background-image: url('./../assets/Arrows-dark.svg')
+                opacity: .6
                 cursor: pointer
             &.left
                 left: 20px

@@ -29,6 +29,7 @@
             &.info
                 position: relative
                 +bg-image(18px, 18px, './../assets/info_icon.svg')
+                opacity: 0.6
                 +smMaxBreakPoint
                     position: static
                 .tooltip
@@ -59,7 +60,7 @@
                             border: none
 
                 &:hover
-                    +bg-image(18px, 18px, './../assets/info_icon-Type=Hoover.svg')
+                    opacity: 1
                     cursor: pointer
                     .tooltip
                         visibility: visible

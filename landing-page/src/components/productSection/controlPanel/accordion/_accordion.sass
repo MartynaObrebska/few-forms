@@ -8,11 +8,12 @@
             height: 53px
             cursor: pointer
             &-plus
-                +bg-image(10px,10px, './../assets/plus-light.svg')
+                +bg-image(10px,10px, './../assets/plus-dark.svg')
+                opacity: .4
                 margin-right: 9px
                 transition: .1s
                 &.active
-                    background-image: url('./../assets/plus-dark.svg')
+                    opacity: 1
                     width: 10px
                     height: 10px
                     transform: rotate(45deg)
@@ -24,7 +25,7 @@
                     font-weight: 900
             &:hover
                 .tab-label-plus
-                    background-image: url('./../assets/plus-dark.svg')
+                    opacity: 1
                 .tab-label-name
                     font-weight: 500
         .tab-content-wrapper

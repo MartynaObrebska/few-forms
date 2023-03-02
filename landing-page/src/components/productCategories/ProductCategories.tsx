@@ -60,7 +60,7 @@ function ProductCategories() {
         <h1>
           Explore more <span>furniture </span>categories
         </h1>
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<></>}>
           {desktopView ? (
             <CategoriesCarouselDesktop slides={slides} />
           ) : (

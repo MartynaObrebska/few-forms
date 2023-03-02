@@ -12,7 +12,11 @@ const Gallery = () => {
 
   const renderThumbs = () =>
     pictures.map((picture, index) => (
-      <div key={index} className={`picture thumbPicture ${picture}`} />
+      <button
+        key={index}
+        className={`picture thumbPicture ${picture}`}
+        aria-label={`thumb button ${index}`}
+      />
     ));
   const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean) => (
     <div onClick={onClickHandler} className="arrow left" />
@@ -30,6 +34,25 @@ const Gallery = () => {
       renderArrowNext={renderArrowNext}
       swipeable={true}
       emulateTouch={true}
+      renderIndicator={(
+        clickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
+        isSelected: boolean,
+        index: number,
+        label: string
+      ) => (
+        <li
+          className={`dot${isSelected ? " selected" : ""}`}
+          value={index}
+          aria-label={`slide item ${index}`}
+        >
+          <button
+            className="dot-button"
+            type="button"
+            onClick={clickHandler}
+            aria-label={`slide button ${index}`}
+          />
+        </li>
+      )}
     >
       {pictures.map((picture, index) => (
         <div key={index} className={`picture ${picture}`} />

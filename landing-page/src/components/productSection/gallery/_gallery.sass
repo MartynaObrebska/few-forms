@@ -5,7 +5,7 @@
     width: 820px
     +xlMaxBreakPoint
         width: 100%
-    div.picture
+    .picture
         +bg-image(473px, 100%, '../../assets/Sideboard_picture.webp', cover)
         +xlMaxBreakPoint
             background-size: contain
@@ -42,6 +42,12 @@
                 background-color: $black
                 width: 10px
                 height: 10px
+                .dot-button
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    border: none
+                    background: transparent
         .control-next.control-arrow:before
             display: none
         .control-prev.control-arrow:before
@@ -62,3 +68,5 @@
                     &.selected, &:hover, &:focus
                         border: 1px solid $black
                         opacity: 1
+                    button
+                        border: none

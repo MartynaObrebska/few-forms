@@ -14,9 +14,10 @@ div.controlPanel
         font-size: 30px
         font-weight: 500
         line-height: 37px
+        +xlMaxBreakPoint
+            padding-left: 25px
     div.productInfo
         +flex(column, space-between, stretch)
-        background-color: $white
         border-width: 1px 0px
         border-style: solid
         border-color: $light-grey
@@ -25,6 +26,9 @@ div.controlPanel
             line-height: 54px
     div.bottomSection
         +flex(row, flex-start)
+        border-width: 0px 0px 1px
+        border-style: solid
+        border-color: $light-grey
         +xlMaxBreakPoint
             justify-content: space-between
         div.priceContainer

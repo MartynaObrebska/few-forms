@@ -1,0 +1,57 @@
+@import './_variables'
+
+=flex($dir: row, $justify-content: center, $align-items: center)
+    display: flex
+    flex-direction: $dir
+    justify-content: $justify-content
+    align-items: $align-items
+
+=container($width, $padding: 45px 50px, $background-color: $white, $border-radius: 10px)
+    +flex(column, space-between, stretch)
+    width: $width
+    padding: $padding
+    background-color: $background-color
+    border: 1px solid $grey
+    border-radius: $border-radius
+
+=bg-image($height, $width, $url, $size: contain)
+    height: $height
+    width: $width
+    background-image: url($url)
+    background-repeat: no-repeat
+    background-size: $size
+    background-position: center
+
+=center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+// Breakpoints
+=smMaxBreakPoint
+    @media (max-width: $screen-sm)
+        @content
+
+=mdMaxBreakPoint
+    @media (max-width: $screen-md)
+        @content
+
+=lgMaxBreakPoint
+    @media (max-width: $screen-lg)
+        @content
+
+=xlMaxBreakPoint
+    @media (max-width: $screen-xl)
+        @content
+
+=wrapperMaxBreakPoint
+    @media (max-width: $wrapper)
+        @content
+
+=customMinBreakPoint($size)
+    @media (min-width: $size+'px')
+        @content
+
+=customMaxBreakPoint($size)
+    @media (max-width: $size+'px')
+        @content

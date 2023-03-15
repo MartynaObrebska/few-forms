@@ -1,0 +1,78 @@
+@import '../../styles/_mixins.sass'
+
+div.header
+    position: relative
+    top: 0
+    +bg-image(calc(98vh), 100%, '../../assets/Beauty-Sideboard-1.webp', cover)
+    div.shadow
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: linear-gradient(to bottom left,rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%)
+    div.title
+        position: absolute
+        left: 100px
+        bottom: 78px
+        width: 559px
+        font-size: 64px
+        text-align: left
+        color: $light-white
+        font-weight: 700
+        line-height: 87.42px
+        +xlMaxBreakPoint
+            top: 110px
+            bottom: auto
+            +lgMaxBreakPoint
+                left: 30px
+                font-size: 36px
+                width: 324px
+                line-height: 49.18px
+                +smMaxBreakPoint
+                    width: auto
+    .down
+        position: absolute
+        left: 50%
+        bottom: 27px
+        transform: translateX(-50%)
+        color: $light-white
+        background: none
+        +lgMaxBreakPoint
+            bottom: 21px
+        &.seeMore
+            height: 45px
+            width: 283px
+            font-size: 16px
+            border: 2px solid $light-white
+            border-radius: 22.5px
+            line-height: 45px
+            font-weight: 300
+            +lgMaxBreakPoint
+                display: none
+            &:hover
+                background-color: $light-white
+                color: $black
+                font-weight: 500
+        &.swipe
+            display: none
+            font-size: 16px
+            border: none
+            +lgMaxBreakPoint
+                +flex(column)
+            p
+                margin-bottom: 8px
+                line-height: 20.49px
+            .arrow
+                +bg-image(9px, 18px, '../../assets/Arrow-down-white.svg')
+    div.signUp
+        top: calc(50%-30px)
+        left: auto
+        right: 100px
+        transform: translateY(-50%)
+        +xlMaxBreakPoint
+            display: none
+        h2.title
+            text-align: center
+        div.close
+            display: none

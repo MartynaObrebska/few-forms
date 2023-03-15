@@ -1,0 +1,30 @@
+div.footer {
+  width: 100%;
+  box-sizing: border-box;
+  height: 260px;
+  font-size: 15px;
+  padding: 40px 110px;
+}
+div.footer h3 {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: left;
+  color: #3A3A3A;
+  margin: 0 0 22px 0;
+}
+div.footer .social-icons {
+  text-align: left;
+  height: 24px;
+}
+div.footer .social-icons img {
+  height: 24px;
+  margin-right: 30px;
+}
+div.footer p.copyright {
+  height: 107px;
+  line-height: 107px;
+  font-size: 15px;
+}/*# sourceMappingURL=footer.css.map */

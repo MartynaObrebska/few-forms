@@ -1,0 +1,10 @@
+div.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #FBFBFB;
+  color: $black;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=app.css.map */

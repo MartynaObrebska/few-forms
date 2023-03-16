@@ -1,0 +1,26 @@
+@import '../../styles/_mixins.sass'
+@import 'categoriesCarouselDesktop/_categoriesCarouselDesktop'
+@import 'categoriesCarouselMobile/_categoriesCarouselMobile'
+
+.product-categories
+  width: calc(100% - 200px)
+  height: 996px
+  background-color: #F3F2EE
+  padding: 60px 100px
+  +smMaxBreakPoint
+    box-sizing: border-box
+    padding: 60px 25px
+    width: 100%
+  .product-categories-content
+    height: 100%
+    h2
+      text-align: left
+      font-family: 'Avenir'
+      font-style: normal
+      font-weight: 900
+      font-size: 48px
+      line-height: 66px
+      +smMaxBreakPoint
+        font-size: 36px
+        line-height: 49px
+        color: #847FFB

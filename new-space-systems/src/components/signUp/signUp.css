@@ -1,0 +1,127 @@
+div.signUp {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 476px;
+  padding: 45px 50px;
+  background-color: #FBFBFB;
+  border: 1px solid #BBBBBB;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  text-align: left;
+}
+@media (max-width: 420px) {
+  div.signUp {
+    padding: 45px 25px;
+  }
+}
+div.signUp .state {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: left;
+}
+div.signUp .state div.icon {
+  height: 58px;
+  width: 58px;
+  background-image: url("../../assets/status_icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 30px auto 20px;
+}
+div.signUp .state h2.title {
+  margin: 0;
+  font-size: 36px;
+  padding-bottom: 30px;
+  font-weight: 900;
+  line-height: 49.18px;
+}
+@media (max-width: 420px) {
+  div.signUp .state h2.title {
+    text-align: left;
+    font-size: 30px;
+    line-height: 41px;
+  }
+}
+div.signUp .state p.description {
+  margin: 0;
+  line-height: 22px;
+  padding: 0 10px 30px 0;
+}
+@media (max-width: 420px) {
+  div.signUp .state p.description {
+    font-size: 16px;
+  }
+}
+div.signUp .state label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 0px 22px;
+  margin-bottom: 30px;
+  gap: 10px;
+  height: 45px;
+  background: #FEFEFE;
+  border: 1px solid #BBBBBB;
+  border-radius: 62px;
+}
+@media (max-width: 420px) {
+  div.signUp .state label {
+    box-sizing: border-box;
+    width: 325px;
+  }
+}
+div.signUp .state label input {
+  width: 100%;
+  border: none;
+  padding: 4px 0 0 0;
+  background: transparent;
+  line-height: normal;
+}
+div.signUp .state label span {
+  color: #F26313;
+}
+div.signUp .state button.joinBtn {
+  margin: 15px 0;
+  width: auto;
+}
+@media (max-width: 420px) {
+  div.signUp .state button.joinBtn {
+    width: 122px;
+  }
+}
+div.signUp .state p.note {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.022em;
+  color: #898787;
+}
+div.signUp .state p.note span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+div.signUp div.close {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/close.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.4;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+div.signUp div.close:hover {
+  opacity: 1;
+}/*# sourceMappingURL=signUp.css.map */

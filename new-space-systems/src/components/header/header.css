@@ -1,0 +1,120 @@
+div.header {
+  position: relative;
+  top: 0;
+  height: 98vh;
+  width: 100%;
+  background-image: url("../../assets/Beauty-Sideboard-1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 420px) {
+  div.header {
+    height: 98vh;
+    width: 100%;
+    background-image: url("../../assets/mobile-header.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
+}
+div.header div.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%);
+}
+@media (max-width: 420px) {
+  div.header div.shadow {
+    height: 80%;
+    background: linear-gradient(135deg, #777777, transparent);
+  }
+}
+div.header div.title {
+  position: absolute;
+  left: 100px;
+  bottom: 78px;
+  width: 559px;
+  text-align: left;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 87px;
+  color: #FEFEFE;
+}
+@media (max-width: 420px) {
+  div.header div.title {
+    position: absolute;
+    width: 320px;
+    height: 198px;
+    left: 16px;
+    top: 85px;
+    font-family: "Avenir";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 66px;
+    letter-spacing: -0.011em;
+  }
+}
+div.header .down {
+  position: absolute;
+  left: 50%;
+  bottom: 27px;
+  transform: translateX(-50%);
+  color: #FEFEFE;
+  background: none;
+}
+@media (max-width: 1024px) {
+  div.header .down {
+    bottom: 21px;
+  }
+}
+div.header .down.swipe {
+  display: none;
+  font-size: 16px;
+  border: none;
+}
+div.header .down.swipe p {
+  margin-bottom: 8px;
+  line-height: 20.49px;
+}
+div.header .down.swipe .arrow {
+  height: 9px;
+  width: 18px;
+  background-image: url("../../assets/Arrow-down-white.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+div.header div.signUp {
+  top: calc(50% - 30px);
+  left: auto;
+  right: 100px;
+  transform: translateY(-50%);
+}
+@media (max-width: 420px) {
+  div.header div.signUp {
+    left: 0;
+    top: auto;
+    bottom: 0;
+    box-sizing: border-box;
+    transform: translateY(0);
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+div.header div.signUp h2.title {
+  text-align: center;
+}
+@media (max-width: 420px) {
+  div.header div.signUp h2.title {
+    text-align: left;
+  }
+}
+div.header div.signUp div.close {
+  display: none;
+}/*# sourceMappingURL=header.css.map */

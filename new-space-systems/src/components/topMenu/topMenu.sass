@@ -1,0 +1,64 @@
+@import '../../styles/_mixins.sass'
+
+div.topMenu
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 5
+    transition: .3s
+    width: 100%
+    height: 60px
+    +smMaxBreakPoint
+        z-index: 11
+    div.topMenuContainer
+        +flex
+        border-bottom: 1px solid $light-grey
+        background-color: $white
+        z-index: 1
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 60px
+        +xlMaxBreakPoint
+            justify-content: left
+        div.home
+            +flex
+            cursor: pointer
+            div.logo
+                margin: 0 14px
+                width: 34px
+                height: 34px
+                background-image: url('../../assets/logo.svg')
+                background-repeat: no-repeat
+                background-size: contain
+                +smMaxBreakPoint
+                    margin: 0 10px 0 14px
+                    width: 25px
+                    height: 25px
+            p.spaceSystem
+                margin: 0
+                font-size: 24px
+                font-weight: 900
+                line-height: 60px
+                letter-spacing: -0.022em
+                +smMaxBreakPoint
+                    font-size: 16px
+                    font-style: normal
+                    font-weight: 900
+                    font-size: 20px
+                    line-height: 27px
+                    letter-spacing: -0.022em
+        div.buttons
+            position: absolute
+            top: 7px
+            right: 30px
+            display: flex
+            +smMaxBreakPoint
+                right: 16px
+                button.contact-button
+                    display: none
+            button
+                margin-left: 18px
+    &.disabled
+        top: -60px

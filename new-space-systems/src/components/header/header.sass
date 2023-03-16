@@ -1,0 +1,79 @@
+@import '../../styles/_mixins.sass'
+
+div.header
+    position: relative
+    top: 0
+    +bg-image(calc(98vh), 100%, '../../assets/Beauty-Sideboard-1.webp', cover)
+    +smMaxBreakPoint
+        +bg-image(calc(98vh), 100%, '../../assets/mobile-header.webp',contain,top)
+    div.shadow
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: linear-gradient(to bottom left,rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%)
+        +smMaxBreakPoint
+            height: 80%
+            background: linear-gradient(135deg, #777777, transparent)
+    div.title
+        position: absolute
+        left: 100px
+        bottom: 78px
+        width: 559px
+        text-align: left
+        font-family: 'Avenir'
+        font-style: normal
+        font-weight: 900
+        font-size: 64px
+        line-height: 87px
+        color: #FEFEFE
+        +smMaxBreakPoint
+            position: absolute
+            width: 320px
+            height: 198px
+            left: 16px
+            top: 85px
+            font-family: 'Avenir'
+            font-style: normal
+            font-weight: 900
+            font-size: 48px
+            line-height: 66px
+            letter-spacing: -0.011em
+    .down
+        position: absolute
+        left: 50%
+        bottom: 27px
+        transform: translateX(-50%)
+        color: $light-white
+        background: none
+        +lgMaxBreakPoint
+            bottom: 21px
+        &.swipe
+            display: none
+            font-size: 16px
+            border: none
+            p
+                margin-bottom: 8px
+                line-height: 20.49px
+            .arrow
+                +bg-image(9px, 18px, '../../assets/Arrow-down-white.svg')
+    div.signUp
+        top: calc(50% - 30px)
+        left: auto
+        right: 100px
+        transform: translateY(-50%)
+        +smMaxBreakPoint
+            left: 0
+            top: auto
+            bottom: 0
+            box-sizing: border-box
+            transform: translateY(0)
+            width: 100%
+            border-radius: 10px 10px 0 0
+        h2.title
+            text-align: center
+            +smMaxBreakPoint
+                text-align: left
+        div.close
+            display: none

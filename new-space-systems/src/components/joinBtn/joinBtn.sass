@@ -1,0 +1,18 @@
+@import '../../styles/_mixins.sass'
+
+button.joinBtn
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 11.5px 60px
+    width: 190px
+    height: 45px
+    background: #FFD232
+    border-radius: 80px
+    border: none
+
+    +smMaxBreakPoint
+        width: 135px
+    &:hover
+        background-color: $light-yellow

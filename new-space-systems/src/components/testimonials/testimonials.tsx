@@ -2,6 +2,8 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel'
 import MML from '../../assets/mml.webp'
 import Concordia from '../../assets/concordia.webp'
 import './testimonials.css'
+import { Suspense } from 'react'
+import CategoriesCarouselMobile from '../productCarousel/categoriesCarouselMobile/CategoriesCarouselMobile'
 
 const Testimonials = () => {
   const slidesData = [{
@@ -21,7 +23,7 @@ const Testimonials = () => {
     ocupation: 'MML Studio, Poland'
   },]
   const slides = slidesData.map((slide, index) => (
-    <div key={index} className="testimonial">
+    <div key={index} className="category">
       <div className="picture-container">
         <img src={slide.image} />
       </div>
@@ -38,31 +40,30 @@ const Testimonials = () => {
   const desktopView = document.body.clientWidth > 1024;
   return <div className="testimonials">
     <h2>Architects and Industry<br />professionals on Space System.</h2>
-    <Carousel
-      offset={25}
-      itemWidth={desktopView ? 365 : 325}
-      draggable
-      slides={slides}
-      plugins={[
-        'arrows', 'fastSwipe', 'infinite',
-        {
-          resolve: slidesToShowPlugin,
-          options: {
-            numberOfSlides: 3
-          }
-        },
-      ]}
-      breakpoints={{
-        420: {
-          plugins: [
-            'infinite', 'centered',
+    <Suspense fallback={<></>}>
+      {desktopView ? (
+        <Carousel
+          offset={25}
+          itemWidth={325}
+          draggable
+          slides={slides}
+          plugins={[
+            'arrows', 'fastSwipe', 'infinite',
             {
-              resolve: slidesToShowPlugin
-            }
-          ]
-        }
-      }}
-    />
+              resolve: slidesToShowPlugin,
+              options: {
+                numberOfSlides: 3
+              }
+            },
+          ]}
+        />
+      ) : (
+        <CategoriesCarouselMobile
+          slides={slides}
+        />
+      )}
+    </Suspense >
+
   </div>
 }
 

@@ -2,10 +2,8 @@ import { Carousel } from "react-responsive-carousel";
 
 interface Props {
   slides: JSX.Element[];
-  slidePercentage: number | undefined;
 }
 function CategoriesCarouselMobile(props: Props) {
-  const isCenterMode = document.body.clientWidth >= 600;
 
   const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean) => (
     <div onClick={onClickHandler} className="arrow left" />
@@ -19,8 +17,7 @@ function CategoriesCarouselMobile(props: Props) {
       <Carousel
         showIndicators={false}
         infiniteLoop={true}
-        centerMode={isCenterMode}
-        centerSlidePercentage={isCenterMode ? props.slidePercentage : undefined}
+        centerMode={false}
         showStatus={false}
         showThumbs={false}
         renderArrowPrev={renderArrowPrev}

@@ -32,29 +32,6 @@ const ProductCarousel = () => {
 
   const desktopView = document.body.clientWidth > 1024;
 
-  const slideWidth = 315;
-  const calculateSlidePercentage = () => {
-    const widthToConsider =
-      document.body.clientWidth >= 1440
-        ? 1440
-        : document.body.clientWidth;
-    return (slideWidth / widthToConsider) * 100;
-  };
-
-  const [slidePercentage, setSlidePercentage] = useState<number | undefined>(
-    calculateSlidePercentage()
-  );
-  const resizeHandler = useCallback(() => {
-    setSlidePercentage(calculateSlidePercentage());
-  }, []);
-  useEffect(() => {
-    window.addEventListener("resize", resizeHandler, { passive: true });
-
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, []);
-
   return <div className="product-categories">
     <div className="product-categories-content">
       <h2>Rethinking the way we manufacture, design, buy, use furniture.</h2>
@@ -65,7 +42,6 @@ const ProductCarousel = () => {
         ) : (
           <CategoriesCarouselMobile
             slides={slides}
-            slidePercentage={slidePercentage}
           />
         )}
       </Suspense>

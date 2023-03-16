@@ -1,3 +1,489 @@
+/********************************************
+	BREAKPOINT WIDTHS
+********************************************/
+/********************************************
+	FONTS
+********************************************/
+/********************************************
+	COLOURS
+********************************************/
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  transition: all 0.25s ease-in;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  background: none;
+  border: 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.carousel .control-arrow:focus, .carousel .control-arrow:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+  margin: 0 5px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: "";
+}
+
+.carousel .control-disabled.control-arrow {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: inherit;
+  display: none;
+}
+
+.carousel .control-prev.control-arrow {
+  left: 0;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #fff;
+}
+
+.carousel .control-next.control-arrow {
+  right: 0;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid #fff;
+}
+
+.carousel-root {
+  outline: none;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel * {
+  box-sizing: border-box;
+}
+
+.carousel img {
+  width: 100%;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.carousel .carousel {
+  position: relative;
+}
+
+.carousel .control-arrow {
+  outline: 0;
+  border: 0;
+  background: none;
+  top: 50%;
+  margin-top: -13px;
+  font-size: 18px;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.carousel .thumbs {
+  transition: all 0.15s ease-in;
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.carousel .thumb {
+  transition: border 0.15s ease-in;
+  display: inline-block;
+  margin-right: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 3px solid #fff;
+  padding: 2px;
+}
+
+.carousel .thumb:focus {
+  border: 3px solid #ccc;
+  outline: none;
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border: 3px solid #333;
+}
+
+.carousel .thumb img {
+  vertical-align: top;
+}
+
+.carousel.carousel-slider {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 0;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.carousel .slider-wrapper {
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  transition: height 0.15s ease-in;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider {
+  -ms-box-orient: horizontal;
+  display: -moz-flex;
+  display: flex;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  flex-direction: column;
+  flex-flow: column;
+}
+
+.carousel .slider-wrapper.axis-vertical {
+  -ms-box-orient: horizontal;
+  display: -moz-flex;
+  display: flex;
+}
+
+.carousel .slider-wrapper.axis-vertical .slider {
+  flex-direction: column;
+}
+
+.carousel .slider {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  width: 100%;
+}
+
+.carousel .slider.animated {
+  transition: all 0.35s ease-in-out;
+}
+
+.carousel .slide {
+  min-width: 100%;
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.carousel .slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+}
+
+.carousel .slide iframe {
+  display: inline-block;
+  width: calc(100% - 80px);
+  margin: 0 40px 40px;
+  border: 0;
+}
+
+.carousel .slide .legend {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.carousel .control-dots {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (min-width: 960px) {
+  .carousel .control-dots {
+    bottom: 0;
+  }
+}
+.carousel .control-dots .dot {
+  transition: opacity 0.25s ease-in;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  background: #fff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.carousel .carousel-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 10px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.carousel:hover .slide .legend {
+  opacity: 1;
+}
+
+.carousel-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 820px;
+}
+.carousel-root .carousel div.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/Arrows-black.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.1;
+  transform: translateX(0);
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .carousel-root .carousel div.arrow {
+    display: none;
+  }
+}
+.carousel-root .carousel div.arrow:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.carousel-root .carousel div.arrow.left {
+  left: 20px;
+  transform: rotate(180deg);
+}
+.carousel-root .carousel div.arrow.right {
+  left: auto;
+  right: 20px;
+}
+.carousel-root .carousel .control-dots .dot {
+  box-shadow: none;
+  background-color: #3A3A3A;
+  width: 10px;
+  height: 10px;
+}
+.carousel-root .carousel .control-dots .dot .dot-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+.carousel-root .carousel .control-next.control-arrow:before {
+  display: none;
+}
+.carousel-root .carousel .control-prev.control-arrow:before {
+  display: none;
+}
+.carousel-root .carousel .thumbs-wrapper {
+  margin: 0;
+}
+@media (max-width: 1240px) {
+  .carousel-root .carousel .thumbs-wrapper {
+    display: none;
+  }
+}
+.carousel-root .carousel .thumbs-wrapper .thumbs {
+  margin: 0;
+  padding: 0;
+}
+.carousel-root .carousel .thumbs-wrapper .thumbs .thumb {
+  border: 1px solid #BBBBBB;
+  border-radius: 2px;
+  opacity: 0.5;
+  padding: 0;
+  margin-right: 10px;
+}
+.carousel-root .carousel .thumbs-wrapper .thumbs .thumb.selected, .carousel-root .carousel .thumbs-wrapper .thumbs .thumb:hover, .carousel-root .carousel .thumbs-wrapper .thumbs .thumb:focus {
+  border: 1px solid #3A3A3A;
+  opacity: 1;
+}
+.carousel-root .carousel .thumbs-wrapper .thumbs .thumb button {
+  border: none;
+}
+
+.categories-carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 606px;
+}
+.categories-carousel-container .carousel-root {
+  width: 100%;
+  height: 606px;
+}
+.categories-carousel-container .carousel-root .slider {
+  height: 606px;
+}
+.categories-carousel-container .carousel-root .slider .category {
+  height: 604px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 295px;
+  padding: 0;
+  background-color: #F3F2EE;
+  border: 1px solid #BBBBBB;
+  border-radius: 5px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.categories-carousel-container .carousel-root .slider .category .picture-container {
+  height: 405px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+.categories-carousel-container .carousel-root .slider .category .picture-container img {
+  height: 100%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.categories-carousel-container .carousel-root .slider .category .bottom-section {
+  height: 206px;
+  font-size: 30px;
+  line-height: 118px;
+  color: #FEFEFE;
+  text-align: left;
+  padding: 24px 28px;
+}
+.categories-carousel-container .carousel-root .slider .category .bottom-section .title {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 41px;
+  letter-spacing: -0.011em;
+  color: #3A3A3A;
+  margin-bottom: 10px;
+}
+.categories-carousel-container .carousel-root .slider .category .bottom-section .description {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.011em;
+  color: #3A3A3A;
+}
+.categories-carousel-container .carousel-root .arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 35px;
+  background-image: url("../../assets/Arrows-black.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 2;
+  transform: translateX(0);
+}
+.categories-carousel-container .carousel-root .arrow:hover {
+  cursor: pointer;
+}
+.categories-carousel-container .carousel-root .arrow.left {
+  left: 28px;
+  transform: rotate(180deg);
+}
+.categories-carousel-container .carousel-root .arrow.right {
+  left: auto;
+  right: 28px;
+}
+.categories-carousel-container .carousel-root .arrow.disabled {
+  opacity: 0.4;
+  cursor: auto;
+}
+.categories-carousel-container .carousel-root .control-dots {
+  display: none;
+  bottom: 0;
+  margin: 0;
+}
+.categories-carousel-container .carousel-root .control-dots .dot {
+  box-shadow: none;
+  background-color: #3A3A3A;
+  width: 10px;
+  height: 10px;
+}
+
+.slide-container {
+  position: relative;
+  height: 8px;
+  width: 400px;
+  background-color: #FEFEFE;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.slide-container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 8px;
+  background-color: #3A3A3A;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
 .testimonials {
   height: 920px;
   width: 100%;
@@ -29,7 +515,7 @@
 }
 .testimonials .BrainhubCarousel__container {
   width: 100%;
-  height: 700px;
+  height: 660px;
 }
 .testimonials .BrainhubCarousel__container .BrainhubCarousel {
   width: 100%;
@@ -69,55 +555,49 @@
 }
 .testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem {
   width: 510px;
-  height: 696.5px;
+  height: 656.5px;
   border: 1px solid #BBBBBB;
   border-radius: 10px;
   background-color: #fff;
   margin-right: 20px;
   display: block;
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial {
-  height: 696.5px;
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category {
+  height: 656.5px;
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .picture-container {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .picture-container {
   border-radius: 10px 10px 0 0;
-  width: 365px;
-  height: 365px;
+  width: 100%;
+  height: 325px;
   overflow: hidden;
   position: relative;
 }
 @media (max-width: 420px) {
-  .testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .picture-container {
-    width: 325px;
+  .testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .picture-container {
+    width: 100%;
+    height: auto;
   }
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .picture-container img {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .picture-container img {
   width: 100%;
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100%;
-  width: auto;
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .bottom-section {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .bottom-section {
   box-sizing: border-box;
   padding: 40px 20px 20px;
   text-align: left;
   border-radius: 0 0 10px 10px;
-  width: 365px;
-  height: 331px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 332px;
 }
-@media (max-width: 420px) {
-  .testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .bottom-section {
-    width: 325px;
-  }
-}
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .bottom-section .description {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .bottom-section .description {
   width: 100%;
   font-family: "Avenir";
   font-style: normal;
@@ -127,7 +607,7 @@
   letter-spacing: -0.022em;
   color: #3A3A3A;
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .bottom-section .author {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .bottom-section .author {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
@@ -137,7 +617,82 @@
   text-decoration-line: underline;
   color: #3A3A3A;
 }
-.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .testimonial .bottom-section .ocupation {
+.testimonials .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .category .bottom-section .ocupation {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.022em;
+  color: #3A3A3A;
+}
+.testimonials .categories-carousel-container {
+  height: auto;
+}
+.testimonials .categories-carousel-container .carousel-root {
+  height: auto;
+}
+.testimonials .categories-carousel-container .carousel-root .slider {
+  height: auto;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide {
+  height: 698px;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category {
+  margin: 24px;
+  width: calc(100% - 48px);
+  height: 672px;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .picture-container {
+  width: 100%;
+  height: 340px;
+  background-color: #fff;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .picture-container img {
+  width: 100%;
+  height: auto;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section {
+  box-sizing: border-box;
+  padding: 40px 20px 20px;
+  text-align: left;
+  border-radius: 0 0 10px 10px;
+  height: 331px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 420px) {
+  .testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section {
+    width: auto;
+    height: 340px;
+  }
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section .description {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.022em;
+  color: #3A3A3A;
+}
+@media (max-width: 420px) {
+  .testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section .description {
+    border-bottom: 60px;
+  }
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section .author {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.022em;
+  text-decoration-line: underline;
+  color: #3A3A3A;
+}
+.testimonials .categories-carousel-container .carousel-root .slider .slide .category .bottom-section .ocupation {
   font-family: "Avenir";
   font-style: normal;
   font-weight: 300;

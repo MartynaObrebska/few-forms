@@ -60,14 +60,14 @@ div.topMenu div.topMenuContainer div.home p.spaceSystem {
   line-height: 60px;
   letter-spacing: -0.022em;
 }
-@media (max-width: 1024px) {
-  div.topMenu div.topMenuContainer div.home p.spaceSystem {
-    font-size: 20px;
-  }
-}
-@media (max-width: 1024px) and (max-width: 420px) {
+@media (max-width: 420px) {
   div.topMenu div.topMenuContainer div.home p.spaceSystem {
     font-size: 16px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.022em;
   }
 }
 div.topMenu div.topMenuContainer div.buttons {
@@ -76,15 +76,12 @@ div.topMenu div.topMenuContainer div.buttons {
   right: 30px;
   display: flex;
 }
-@media (max-width: 1024px) {
+@media (max-width: 420px) {
   div.topMenu div.topMenuContainer div.buttons {
-    width: 135px;
-    margin-right: 10px;
+    right: 16px;
   }
-}
-@media (max-width: 1024px) and (max-width: 420px) {
-  div.topMenu div.topMenuContainer div.buttons {
-    font-size: 14px;
+  div.topMenu div.topMenuContainer div.buttons button.contact-button {
+    display: none;
   }
 }
 div.topMenu div.topMenuContainer div.buttons button {

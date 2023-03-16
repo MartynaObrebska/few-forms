@@ -5,6 +5,11 @@ div.footer {
   font-size: 15px;
   padding: 40px 110px;
 }
+@media (max-width: 420px) {
+  div.footer {
+    padding: 40px 35px;
+  }
+}
 div.footer h3 {
   font-family: "Avenir";
   font-style: normal;
@@ -27,4 +32,9 @@ div.footer p.copyright {
   height: 107px;
   line-height: 107px;
   font-size: 15px;
+}
+@media (max-width: 420px) {
+  div.footer p.copyright {
+    line-height: 150px;
+  }
 }/*# sourceMappingURL=footer.css.map */

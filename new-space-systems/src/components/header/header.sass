@@ -4,6 +4,8 @@ div.header
     position: relative
     top: 0
     +bg-image(calc(98vh), 100%, '../../assets/Beauty-Sideboard-1.webp', cover)
+    +smMaxBreakPoint
+        +bg-image('1005px', 100%, '../../assets/mobile-header.webp',contain,top)
     div.shadow
         position: absolute
         width: 100%
@@ -11,6 +13,9 @@ div.header
         top: 0
         left: 0
         background: linear-gradient(to bottom left,rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%)
+        +smMaxBreakPoint
+            height: 80%
+            background: linear-gradient(135deg, #777777, transparent)
     div.title
         position: absolute
         left: 100px
@@ -23,16 +28,18 @@ div.header
         font-size: 64px
         line-height: 87px
         color: #FEFEFE
-        +xlMaxBreakPoint
-            top: 110px
-            bottom: auto
-            +lgMaxBreakPoint
-                left: 30px
-                font-size: 36px
-                width: 324px
-                line-height: 49.18px
-                +smMaxBreakPoint
-                    width: auto
+        +smMaxBreakPoint
+            position: absolute
+            width: 320px
+            height: 198px
+            left: 16px
+            top: 85px
+            font-family: 'Avenir'
+            font-style: normal
+            font-weight: 900
+            font-size: 48px
+            line-height: 66px
+            letter-spacing: -0.011em
     .down
         position: absolute
         left: 50%
@@ -73,8 +80,19 @@ div.header
         right: 100px
         transform: translateY(-50%)
         +xlMaxBreakPoint
-            display: none
+            box-sizing: border-box
+            top: auto
+            right: auto
+            bottom: 0
+            width: 100%
+            transform: none
+            border-radius: 10px 10px 0 0
+
+            +smMaxBreakPoint
+                left: 0
         h2.title
             text-align: center
+            +smMaxBreakPoint
+            text-align: left
         div.close
             display: none

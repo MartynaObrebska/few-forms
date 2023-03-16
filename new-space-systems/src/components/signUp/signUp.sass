@@ -6,6 +6,8 @@ div.signUp
     top: 0
     left: 0
     text-align: left
+    +smMaxBreakPoint
+        padding: 45px 25px
     .state
         +flex(column, space-between, stretch)
         text-align: left
@@ -18,10 +20,16 @@ div.signUp
             padding-bottom: 30px
             font-weight: 900
             line-height: 49.18px
+            +smMaxBreakPoint
+                text-align: left
+                font-size: 30px
+                line-height: 41px
         p.description
             margin: 0
             line-height: 22px
             padding: 0 10px 30px 0
+            +smMaxBreakPoint
+                font-size: 16px
         label
             display: flex
             flex-direction: row
@@ -30,13 +38,15 @@ div.signUp
             padding: 0px 0px 0px 22px
             margin-bottom: 30px
             gap: 10px
-            width: 376px
             height: 45px
             background: #FEFEFE
             border: 1px solid #BBBBBB
             border-radius: 62px
+            +smMaxBreakPoint
+                box-sizing: border-box
+                width: 325px
             input
-                width: 165px
+                width: 100%
                 border: none
                 padding: 4px 0 0 0
                 background: transparent
@@ -46,6 +56,8 @@ div.signUp
         button.joinBtn
             margin: 15px 0
             width: auto
+            +smMaxBreakPoint
+                width: 122px
         p.note
             font-family: 'Avenir'
             font-style: normal

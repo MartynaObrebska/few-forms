@@ -1,18 +1,10 @@
-import React from "react";
-import { useCallback, useEffect, useState } from "react";
-import { screenLg, screenWrapper } from "../../../utility/breakpoints";
+
+import Carousel, { slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import image1 from '../../../assets/lay-on-sofa.webp'
 import image2 from '../../../assets/phone-screen1.webp'
 import image3 from '../../../assets/machine.webp'
 import image4 from '../../../assets/drawer.webp'
 import image5 from '../../../assets/phone-screen2.webp'
-import CategoriesCarouselDesktop from "./categoriesCarouselDesktop/CategoriesCarouselDesktop"
-
-const CategoriesCarouselMobile = React.lazy(
-  () => import("./categoriesCarouselMobile/CategoriesCarouselMobile")
-);
-
-import "./productCategories.css";
 
 function ProductCategories() {
   const categories = [
@@ -36,44 +28,44 @@ function ProductCategories() {
     </div>
   ));
 
-  const slideWidth = 530;
-  const calculateSlidePercentage = () => {
-    const widthToConsider =
-      document.body.clientWidth >= screenWrapper
-        ? screenWrapper
-        : document.body.clientWidth;
-    return (slideWidth / widthToConsider) * 100;
-  };
+  const desktopView = document.body.clientWidth > 1024;
+  const pluginsDesktop = [
+    'centered', 'arrows', 'fastSwipe', 'infinite',
+    {
+      resolve: slidesToShowPlugin
+    }
+  ]
+  const pluginsMobile = [
+    'centered', 'infinite',
+    {
+      resolve: slidesToShowPlugin,
+      options: 1
 
-  const [slidePercentage, setSlidePercentage] = useState<number | undefined>(
-    calculateSlidePercentage()
-  );
-  const desktopView = document.body.clientWidth > screenLg;
-
-  const resizeHandler = useCallback(() => {
-    setSlidePercentage(calculateSlidePercentage());
-  }, []);
-  useEffect(() => {
-    window.addEventListener("resize", resizeHandler, { passive: true });
-
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, []);
-
+    }
+  ]
   return (
-    <>
-      {desktopView ? (
-        <CategoriesCarouselDesktop slides={slides} />
-      ) : (
-        <React.Suspense fallback={<></>}>
-          <CategoriesCarouselMobile
-            slides={slides}
-            slidePercentage={slidePercentage}
-          />
-        </React.Suspense >
-      )}
-    </>
+    <Carousel
+      offset={20}
+      itemWidth={desktopView ? 510 : 325}
+      draggable
+      slides={slides}
+      plugins={[
+        'centered', 'arrows', 'fastSwipe', 'infinite',
+        {
+          resolve: slidesToShowPlugin
+        }
+      ]}
+      breakpoints={{
+        420: {
+          plugins: [
+            'infinite', 'centered',
+            {
+              resolve: slidesToShowPlugin
+            }
+          ]
+        }
+      }}
+    />
   );
 }
 

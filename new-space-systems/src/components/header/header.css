@@ -8,6 +8,16 @@ div.header {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 420px) {
+  div.header {
+    height: "1005px";
+    width: 100%;
+    background-image: url("../../assets/mobile-header.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
+}
 div.header div.shadow {
   position: absolute;
   width: 100%;
@@ -15,6 +25,12 @@ div.header div.shadow {
   top: 0;
   left: 0;
   background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%);
+}
+@media (max-width: 420px) {
+  div.header div.shadow {
+    height: 80%;
+    background: linear-gradient(135deg, #777777, transparent);
+  }
 }
 div.header div.title {
   position: absolute;
@@ -29,23 +45,19 @@ div.header div.title {
   line-height: 87px;
   color: #FEFEFE;
 }
-@media (max-width: 1240px) {
+@media (max-width: 420px) {
   div.header div.title {
-    top: 110px;
-    bottom: auto;
-  }
-}
-@media (max-width: 1240px) and (max-width: 1024px) {
-  div.header div.title {
-    left: 30px;
-    font-size: 36px;
-    width: 324px;
-    line-height: 49.18px;
-  }
-}
-@media (max-width: 1240px) and (max-width: 1024px) and (max-width: 420px) {
-  div.header div.title {
-    width: auto;
+    position: absolute;
+    width: 320px;
+    height: 198px;
+    left: 16px;
+    top: 85px;
+    font-family: "Avenir";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 66px;
+    letter-spacing: -0.011em;
   }
 }
 div.header .down {
@@ -113,11 +125,23 @@ div.header div.signUp {
 }
 @media (max-width: 1240px) {
   div.header div.signUp {
-    display: none;
+    box-sizing: border-box;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 10px 10px 0 0;
+  }
+}
+@media (max-width: 1240px) and (max-width: 420px) {
+  div.header div.signUp {
+    left: 0;
   }
 }
 div.header div.signUp h2.title {
   text-align: center;
+  text-align: left;
 }
 div.header div.signUp div.close {
   display: none;

@@ -42,20 +42,22 @@ div.topMenu
                 font-weight: 900
                 line-height: 60px
                 letter-spacing: -0.022em
-                +lgMaxBreakPoint
+                +smMaxBreakPoint
+                    font-size: 16px
+                    font-style: normal
+                    font-weight: 900
                     font-size: 20px
-                    +smMaxBreakPoint
-                        font-size: 16px
+                    line-height: 27px
+                    letter-spacing: -0.022em
         div.buttons
             position: absolute
             top: 7px
             right: 30px
             display: flex
-            +lgMaxBreakPoint
-                width: 135px
-                margin-right: 10px
-                +smMaxBreakPoint
-                    font-size: 14px
+            +smMaxBreakPoint
+                right: 16px
+                button.contact-button
+                    display: none
             button
                 margin-left: 18px
     &.disabled

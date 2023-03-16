@@ -1,9 +1,12 @@
+@import '../../styles/_mixins'
 div.footer
     width: 100%
     box-sizing: border-box
     height: 260px
     font-size: 15px
     padding: 40px 110px
+    +smMaxBreakPoint
+        padding: 40px 35px
     h3
         font-family: 'Avenir'
         font-style: normal
@@ -13,7 +16,6 @@ div.footer
         text-align: left
         color: #3A3A3A
         margin: 0 0 22px 0
-
     .social-icons
         text-align: left
         height: 24px
@@ -24,3 +26,5 @@ div.footer
         height: 107px
         line-height: 107px
         font-size: 15px
+        +smMaxBreakPoint
+            line-height: 150px

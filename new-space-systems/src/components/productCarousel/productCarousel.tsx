@@ -1,4 +1,6 @@
 import ProductCategories from './productCategories/ProductCategories';
+import '@brainhubeu/react-carousel/lib/style.css';
+
 import './productCarousel.css'
 
 const ProductCarousel = (props: { productSectionRef: React.MutableRefObject<HTMLDivElement | null> }) => {
@@ -6,7 +8,7 @@ const ProductCarousel = (props: { productSectionRef: React.MutableRefObject<HTML
     ref={props.productSectionRef}
     className="product-carousel-root"
   >
-    <h2>Enjoy being an Architect,<br />not a project manager</h2>
+    <h2>Rethinking the way we manufacture, design, buy, use furniture.</h2>
     <ProductCategories />
   </div>
 }

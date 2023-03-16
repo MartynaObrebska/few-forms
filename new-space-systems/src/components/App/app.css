@@ -3,8 +3,6 @@ div.app {
   display: flex;
   flex-direction: column;
   background-color: #FBFBFB;
-  color: $black;
+  color: #3A3A3A;
   overflow: hidden;
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

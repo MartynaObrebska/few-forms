@@ -35,11 +35,12 @@ const Testimonials = () => {
 
     </div>))
 
+  const desktopView = document.body.clientWidth > 1024;
   return <div className="testimonials">
     <h2>Architects and Industry<br />professionals on Space System.</h2>
     <Carousel
       offset={25}
-      itemWidth={365}
+      itemWidth={desktopView ? 365 : 325}
       draggable
       slides={slides}
       plugins={[
@@ -51,6 +52,16 @@ const Testimonials = () => {
           }
         },
       ]}
+      breakpoints={{
+        420: {
+          plugins: [
+            'infinite', 'centered',
+            {
+              resolve: slidesToShowPlugin
+            }
+          ]
+        }
+      }}
     />
   </div>
 }

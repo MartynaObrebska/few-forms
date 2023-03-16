@@ -70,21 +70,25 @@ div.topMenu div.topMenuContainer div.home p.spaceSystem {
     font-size: 16px;
   }
 }
-div.topMenu div.topMenuContainer button.joinBtn {
+div.topMenu div.topMenuContainer div.buttons {
   position: absolute;
   top: 7px;
   right: 30px;
+  display: flex;
 }
 @media (max-width: 1024px) {
-  div.topMenu div.topMenuContainer button.joinBtn {
+  div.topMenu div.topMenuContainer div.buttons {
     width: 135px;
     margin-right: 10px;
   }
 }
 @media (max-width: 1024px) and (max-width: 420px) {
-  div.topMenu div.topMenuContainer button.joinBtn {
+  div.topMenu div.topMenuContainer div.buttons {
     font-size: 14px;
   }
+}
+div.topMenu div.topMenuContainer div.buttons button {
+  margin-left: 18px;
 }
 div.topMenu.disabled {
   top: -60px;

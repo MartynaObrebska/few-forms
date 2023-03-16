@@ -8,7 +8,6 @@ div.header {
   background-size: cover;
   background-position: center;
 }
-
 div.header div.shadow {
   position: absolute;
   width: 100%;
@@ -17,26 +16,25 @@ div.header div.shadow {
   left: 0;
   background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%);
 }
-
 div.header div.title {
   position: absolute;
   left: 100px;
   bottom: 78px;
-  width: 900px;
-  font-size: 64px;
+  width: 559px;
   text-align: left;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 87px;
   color: #FEFEFE;
-  font-weight: 700;
-  line-height: 87.42px;
 }
-
 @media (max-width: 1240px) {
   div.header div.title {
     top: 110px;
     bottom: auto;
   }
 }
-
 @media (max-width: 1240px) and (max-width: 1024px) {
   div.header div.title {
     left: 30px;
@@ -45,13 +43,11 @@ div.header div.title {
     line-height: 49.18px;
   }
 }
-
 @media (max-width: 1240px) and (max-width: 1024px) and (max-width: 420px) {
   div.header div.title {
     width: auto;
   }
 }
-
 div.header .down {
   position: absolute;
   left: 50%;
@@ -60,13 +56,11 @@ div.header .down {
   color: #FEFEFE;
   background: none;
 }
-
 @media (max-width: 1024px) {
   div.header .down {
     bottom: 21px;
   }
 }
-
 div.header .down.seeMore {
   height: 45px;
   width: 283px;
@@ -76,25 +70,21 @@ div.header .down.seeMore {
   line-height: 45px;
   font-weight: 300;
 }
-
 @media (max-width: 1024px) {
   div.header .down.seeMore {
     display: none;
   }
 }
-
 div.header .down.seeMore:hover {
   background-color: #FEFEFE;
   color: #3A3A3A;
   font-weight: 500;
 }
-
 div.header .down.swipe {
   display: none;
   font-size: 16px;
   border: none;
 }
-
 @media (max-width: 1024px) {
   div.header .down.swipe {
     display: flex;
@@ -103,12 +93,10 @@ div.header .down.swipe {
     align-items: center;
   }
 }
-
 div.header .down.swipe p {
   margin-bottom: 8px;
   line-height: 20.49px;
 }
-
 div.header .down.swipe .arrow {
   height: 9px;
   width: 18px;
@@ -117,26 +105,20 @@ div.header .down.swipe .arrow {
   background-size: contain;
   background-position: center;
 }
-
 div.header div.signUp {
-  top: 50%;
+  top: calc(50% - 30px);
   left: auto;
   right: 100px;
   transform: translateY(-50%);
 }
-
 @media (max-width: 1240px) {
   div.header div.signUp {
     display: none;
   }
 }
-
 div.header div.signUp h2.title {
   text-align: center;
 }
-
 div.header div.signUp div.close {
   display: none;
-}
-
-/*# sourceMappingURL=header.css.map */
+}/*# sourceMappingURL=header.css.map */

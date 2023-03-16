@@ -73,12 +73,13 @@ div.signUp .state button.joinBtn {
   width: auto;
 }
 div.signUp .state p.note {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 300;
   font-size: 14px;
-  line-height: 20.49px;
-  color: #898787;
-  padding: 0;
+  line-height: 19px;
   letter-spacing: -0.022em;
-  font-weight: 100;
+  color: #898787;
 }
 div.signUp .state p.note span {
   text-decoration: underline;

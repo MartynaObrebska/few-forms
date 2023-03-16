@@ -7,7 +7,7 @@ const BottomSection = lazy(() => import("./BottomSection/BottomSection"));
 function App() {
   const [activePopUp, setActivePopUp] = useState(false);
   const productSectionRef = useRef<HTMLDivElement | null>(null);
-  const headerRef = useRef<HTMLDivElement | null>(null);
+  const letsGetInTouchRef = useRef<HTMLDivElement | null>(null);
 
   // Home
   const handleHomeBtn = () => {
@@ -15,6 +15,7 @@ function App() {
       document.body.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   // Pop up
   const handleOpenPopUp = () => {
     setActivePopUp(true);
@@ -23,24 +24,25 @@ function App() {
     setActivePopUp(false);
   };
   // Scroll
-  const handleClickScroll = () => {
-    headerRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleContactBtn = () => {
+    console.log(letsGetInTouchRef)
+    letsGetInTouchRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="app">
       <Suspense fallback={<></>}>
         <TopMenu
-          productSectionRef={productSectionRef}
           handleHomeBtn={handleHomeBtn}
+          handleContactBtn={handleContactBtn}
         />
       </Suspense>
-      <Header headerRef={headerRef} handleClickScroll={handleClickScroll} />
+      <Header />
       <Suspense fallback={<></>}>
         <BottomSection
           activePopUp={activePopUp}
           productSectionRef={productSectionRef}
-          handleOpenPopUp={handleOpenPopUp}
+          letsGetInTouchRef={letsGetInTouchRef}
           handleClosePopUp={handleClosePopUp}
         />
       </Suspense>

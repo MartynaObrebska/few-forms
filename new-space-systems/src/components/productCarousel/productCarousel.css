@@ -79,7 +79,7 @@
   font-weight: 900;
   font-size: 36px;
   line-height: 49px;
-  color: #3A3A3A;
+  letter-spacing: -0.011em;
 }
 .product-carousel-root .BrainhubCarousel__container .BrainhubCarousel .BrainhubCarousel__trackContainer .BrainhubCarousel__track .BrainhubCarouselItem .bottom-section .description {
   font-family: "Avenir";

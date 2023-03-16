@@ -1,14 +1,15 @@
 import { MutableRefObject, useEffect, useState } from "react";
+import ContactBtn from "../ContactBtn/ContactBtn";
 import JoinBtn from "../joinBtn/JoinBtn";
 import "./topMenu.css";
 
 interface Props {
-  productSectionRef: MutableRefObject<HTMLDivElement | null>;
   handleHomeBtn: () => void;
+  handleContactBtn: () => void
 }
 
 function TopMenu(props: Props) {
-  const { handleHomeBtn } =
+  const { handleHomeBtn, handleContactBtn } =
     props;
   const [activeTopMenu, setActiveTopMenu] = useState(true);
   const [scrollValue, setScrollValue] = useState(0);
@@ -35,7 +36,10 @@ function TopMenu(props: Props) {
           <div className="logo" />
           <p className="spaceSystem">Space System</p>
         </div>
-        <JoinBtn handleClick={handleHomeBtn} />
+        <div className="buttons">
+          <ContactBtn handleClick={handleContactBtn} />
+          <JoinBtn handleClick={handleHomeBtn} />
+        </div>
       </div>
     </div>
   );

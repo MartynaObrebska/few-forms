@@ -4,8 +4,8 @@ import LinkedIn from '../../assets/linkedin.svg'
 import Mail from '../../assets/Mail.svg'
 import './LetsGetInTouch.css'
 
-const LetsGetInTouch = () => {
-  return <div className="lets-get-in-touch">
+const LetsGetInTouch = (props: { letsGetInTouchRef: React.MutableRefObject<HTMLDivElement | null> }) => {
+  return <div ref={props.letsGetInTouchRef} className="lets-get-in-touch">
     <div className="image-container">
       <img src={People} alt="people-working-together" />
     </div>

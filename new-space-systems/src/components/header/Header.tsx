@@ -1,18 +1,13 @@
 import SignUp from "../signUp/SignUp";
 import "./header.css";
 
-interface Props {
-  headerRef: React.MutableRefObject<HTMLDivElement | null>
-  handleClickScroll: () => void;
-}
-
-function Header(props: Props) {
+function Header() {
   const content = {
     defaultState: {
-      title: "Seed Update Newsletter",
+      title: "Venture Update</br>Newsletter",
       description:
         "Stay up-to-date on our company's progress and development by subscribing to our Seed Update Newsletter. We are sending updates every few months and don’t bother if not neccessary.",
-      note: 'Common table is made of natural solid',
+      note: 'By clicking "Subscribe" I consent to receiving commercial information to the above e-mail address. I have read and accept the Privacy Policy.',
     },
     successState: {
       title: "You have joined the waitlist!",
@@ -22,9 +17,9 @@ function Header(props: Props) {
   };
 
   return (
-    <div ref={props.headerRef} className="header">
+    <div className="header">
       <div className="shadow"></div>
-      <div className="title">First furniture,<br />changing with you.</div>
+      <div className="title">Reusable<br />custom furniture.</div>
       <SignUp content={content} />
     </div>
   );

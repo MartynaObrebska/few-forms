@@ -1,7 +1,11 @@
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { screenLg, screenWrapper } from "../../../utility/breakpoints";
-import image from '../../../assets/Frame-1025.webp'
+import image1 from '../../../assets/lay-on-sofa.webp'
+import image2 from '../../../assets/phone-screen1.webp'
+import image3 from '../../../assets/machine.webp'
+import image4 from '../../../assets/drawer.webp'
+import image5 from '../../../assets/phone-screen2.webp'
 import CategoriesCarouselDesktop from "./categoriesCarouselDesktop/CategoriesCarouselDesktop"
 
 const CategoriesCarouselMobile = React.lazy(
@@ -12,28 +16,27 @@ import "./productCategories.css";
 
 function ProductCategories() {
   const categories = [
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' },
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' },
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' },
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' },
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' },
-    { image: image, title: "Easy to design", description: 'We provide you with complete 3D models in compatible formats and developing the design tools build into your CAD software.' }
+    { image: image1, title: "Stress-free experience.", description: 'Designed online in less than 1 hour, delivered within 1 week, assembled easily with 1 tool.' },
+    { image: image2, title: "No design skills required.", description: 'Design recommendations based on your needs, not your design skills and powered by algorithms. ' },
+    { image: image3, title: "Serialised, but bespoke.", description: 'As custom as bespoke, but manufactured serially, due to proprietary hardware innovations.' },
+    { image: image4, title: "Reconfigurable & reusable.", description: 'Switch, extend or shrink if your needs change or return furniture and get a pay back.' },
+    { image: image5, title: "Furniture as a service.", description: 'First custom-fit furniture available in subscription, to enjoy furniture without ownership downsides.' },
   ];
 
   const slides = categories.map((category, index) => (
     <div key={index} className="category">
       <div className="picture-container">
-        <img src={image} />
+        <img src={category.image} />
       </div>
       <div className="bottom-section">
         <div className="title">{category.title}</div>
         <div className="description">{category.description}</div>
-        </div>
+      </div>
 
     </div>
   ));
 
-  const slideWidth = 510;
+  const slideWidth = 530;
   const calculateSlidePercentage = () => {
     const widthToConsider =
       document.body.clientWidth >= screenWrapper

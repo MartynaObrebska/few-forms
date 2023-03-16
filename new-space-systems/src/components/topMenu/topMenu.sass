@@ -46,14 +46,17 @@ div.topMenu
                     font-size: 20px
                     +smMaxBreakPoint
                         font-size: 16px
-        button.joinBtn
+        div.buttons
             position: absolute
             top: 7px
             right: 30px
+            display: flex
             +lgMaxBreakPoint
                 width: 135px
                 margin-right: 10px
                 +smMaxBreakPoint
                     font-size: 14px
+            button
+                margin-left: 18px
     &.disabled
         top: -60px

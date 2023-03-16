@@ -30,7 +30,7 @@ function SignUp(props: Props) {
 
   const defaultState = (
     <div className="state">
-      <h2 className="title">{content?.defaultState.title}</h2>
+      <h2 className="title" dangerouslySetInnerHTML={{ __html: content?.defaultState.title ?? '' }} />
       <p className="description">{content?.defaultState.description}</p>
       <label htmlFor="email">
         <input
@@ -41,8 +41,8 @@ function SignUp(props: Props) {
         ></input>
         <JoinBtn handleClick={handleJoinBtnClick} />
       </label>
-      <p className="note">{content?.defaultState.note}{' and '}<u>read more</u></p>
-    </div>
+      <p className="note">{content?.defaultState.note}{' '}<u>Privacy Policy</u></p>
+    </div >
   );
 
   const succesState = (

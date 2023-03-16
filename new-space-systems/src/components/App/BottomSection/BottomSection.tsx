@@ -8,17 +8,17 @@ import Testimonials from "../../testimonials/testimonials";
 interface Props {
   activePopUp: boolean;
   productSectionRef: React.MutableRefObject<HTMLDivElement | null>;
-  handleOpenPopUp: () => void;
+  letsGetInTouchRef: React.MutableRefObject<HTMLDivElement | null>;
   handleClosePopUp: () => void;
 }
 function BottomSection(props: Props) {
-  const { activePopUp, productSectionRef, handleOpenPopUp, handleClosePopUp } =
+  const { activePopUp, productSectionRef, letsGetInTouchRef, handleClosePopUp } =
     props;
   return (
     <>
       <RecognisedBy />
       <ProductCarousel productSectionRef={productSectionRef} />
-      <LetsGetInTouch />
+      <LetsGetInTouch letsGetInTouchRef={letsGetInTouchRef} />
       <Testimonials />
       <Footer />
       {activePopUp && <PopUp handleClosePopUp={handleClosePopUp} />}

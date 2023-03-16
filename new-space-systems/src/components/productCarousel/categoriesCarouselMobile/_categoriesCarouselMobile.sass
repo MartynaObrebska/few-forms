@@ -1,0 +1,94 @@
+@import './_gallery'
+.categories-carousel-container
+    +flex(column)
+    gap: 30px
+    width: 100%
+    height: 606px
+    .carousel-root
+        width: 100%
+        height: 606px
+        .slider
+
+            height: 606px
+            .category
+                height: 604px
+                +container(295px, 0,#F3F2EE, 5px)
+                margin: 0 auto
+                border-radius: 10px
+                .picture-container
+                    height: 405px
+                    overflow: hidden
+                    position: relative
+                    border-radius: 10px 10px 0 0
+                    img
+                        height: 100%
+                        width: auto
+                        top: 50%
+                        left: 50%
+                        position: absolute
+                        transform: translate(-50%,-50%)
+                .bottom-section
+                    height: 206px
+                    font-size: 30px
+                    line-height: 118px
+                    color: $light-white
+                    text-align: left
+                    padding: 24px 28px
+                    .title
+                        font-family: 'Avenir'
+                        font-style: normal
+                        font-weight: 900
+                        font-size: 30px
+                        line-height: 41px
+                        letter-spacing: -0.011em
+                        color: #3A3A3A
+                        margin-bottom: 10px
+                    .description
+                        font-family: 'Avenir'
+                        font-style: normal
+                        font-weight: 500
+                        font-size: 16px
+                        line-height: 22px
+                        letter-spacing: -0.011em
+                        color: #3A3A3A
+        .arrow
+            +center
+            +bg-image(35px, 35px, '../../assets/Arrows-black.svg')
+            z-index: 2
+            transform: translateX(0)
+            &:hover
+                cursor: pointer
+            &.left
+                left: 28px
+                transform: rotate(180deg)
+            &.right
+                left: auto
+                right: 28px
+            &.disabled
+                opacity: .4
+                cursor: auto
+        .control-dots
+            display: none
+            bottom: 0
+            margin: 0
+            .dot
+                box-shadow: none
+                background-color: $black
+                width: 10px
+                height: 10px
+.slide-container
+    position: relative
+    height: 8px
+    width: 400px
+    background-color: $light-white
+    border-radius: 10px
+    overflow: hidden
+    .slider
+        position: absolute
+        top: 0
+        left: 0
+        width: 100px
+        height: 8px
+        background-color: $black
+        border-radius: 10px
+        transition: .3s

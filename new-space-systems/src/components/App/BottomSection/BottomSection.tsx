@@ -5,16 +5,15 @@ import RecognisedBy from "../../recognisedBy/RecognisedBy";
 import Testimonials from "../../testimonials/testimonials";
 
 interface Props {
-  productSectionRef: React.MutableRefObject<HTMLDivElement | null>;
   letsGetInTouchRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 function BottomSection(props: Props) {
-  const { productSectionRef, letsGetInTouchRef } =
-    props;
+  const { letsGetInTouchRef } = props;
+
   return (
     <>
       <RecognisedBy />
-      <ProductCarousel productSectionRef={productSectionRef} />
+      <ProductCarousel />
       <LetsGetInTouch letsGetInTouchRef={letsGetInTouchRef} />
       <Testimonials />
       <Footer />

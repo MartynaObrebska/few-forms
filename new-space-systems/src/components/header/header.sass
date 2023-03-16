@@ -5,7 +5,7 @@ div.header
     top: 0
     +bg-image(calc(98vh), 100%, '../../assets/Beauty-Sideboard-1.webp', cover)
     +smMaxBreakPoint
-        +bg-image('1005px', 100%, '../../assets/mobile-header.webp',contain,top)
+        +bg-image(calc(98vh), 100%, '../../assets/mobile-header.webp',contain,top)
     div.shadow
         position: absolute
         width: 100%
@@ -65,6 +65,12 @@ div.header
         transform: translateY(-50%)
         +smMaxBreakPoint
             left: 0
+            top: auto
+            bottom: 0
+            box-sizing: border-box
+            transform: translateY(0)
+            width: 100%
+            border-radius: 10px 10px 0 0
         h2.title
             text-align: center
             +smMaxBreakPoint

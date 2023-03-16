@@ -33,7 +33,6 @@ function App() {
       <Header />
       <Suspense fallback={<></>}>
         <BottomSection
-          productSectionRef={productSectionRef}
           letsGetInTouchRef={letsGetInTouchRef}
         />
       </Suspense>

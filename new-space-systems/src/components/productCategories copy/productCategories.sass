@@ -1,0 +1,23 @@
+@import '../../styles/_mixins.sass'
+@import 'categoriesCarouselDesktop/_categoriesCarouselDesktop'
+@import 'categoriesCarouselMobile/_categoriesCarouselMobile'
+
+.product-categories
+    height: 637px
+    background-color: $dark-white
+    +lgMaxBreakPoint
+        height: 468px
+    &-content
+        +flex(column)
+        height: 100%
+        gap: 30px
+        max-width: 1440px
+        margin: 0 auto
+        h1
+            font-size: 36px
+            font-weight: 900
+            +lgMaxBreakPoint
+                font-size: 24px
+            span
+                +lgMaxBreakPoint
+                    display: none

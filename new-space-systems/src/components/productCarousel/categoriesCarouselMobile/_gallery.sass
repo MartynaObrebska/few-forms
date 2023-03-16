@@ -1,0 +1,57 @@
+@import './../../../../node_modules/react-responsive-carousel/lib/styles/carousel'
+
+.carousel-root
+    +flex(column, space-around)
+    width: 820px
+    .carousel
+        div.arrow
+            +center
+            +bg-image(32px, 32px, '../../assets/Arrows-black.svg')
+            opacity: .1
+            transform: translateX(0)
+            z-index: 1
+            +lgMaxBreakPoint
+                display: none
+            &:hover
+                opacity: .6
+                cursor: pointer
+            &.left
+                left: 20px
+                transform: rotate(180deg)
+            &.right
+                left: auto
+                right: 20px
+        .control-dots
+            .dot
+                box-shadow: none
+                background-color: $black
+                width: 10px
+                height: 10px
+                .dot-button
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    border: none
+                    background: transparent
+        .control-next.control-arrow:before
+            display: none
+        .control-prev.control-arrow:before
+            display: none
+        .thumbs-wrapper
+            margin: 0
+            +xlMaxBreakPoint
+                display: none
+            .thumbs
+                margin: 0
+                padding: 0
+                .thumb
+                    border: 1px solid $grey
+                    border-radius: 2px
+                    opacity: 0.5
+                    padding: 0
+                    margin-right: 10px
+                    &.selected, &:hover, &:focus
+                        border: 1px solid $black
+                        opacity: 1
+                    button
+                        border: none

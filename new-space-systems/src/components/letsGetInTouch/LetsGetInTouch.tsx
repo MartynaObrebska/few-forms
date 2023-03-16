@@ -16,7 +16,7 @@ const LetsGetInTouch = (props: { letsGetInTouchRef: React.MutableRefObject<HTMLD
         <div className='ceo-section'>
           <div className="ceo-image-container"><img src={Bartek} alt="profile-picture-of-Bartosz-Bykowski" /></div>
           <div className="ceo-information">
-            <div className="ceo-name">Bartosz Bykowskii</div>
+            <div className="ceo-name">Bartosz Bykowski</div>
             <div className="ceo-title">Founder</div>
             <div className="social-icons">
               <a className="linked-in" href='https://www.linkedin.com/company/few-products/' target='_blank'>

@@ -14,49 +14,33 @@ interface Props {
       description: string;
     };
   };
-  handleClosePopUp?: () => void;
 }
 
 function SignUp(props: Props) {
-  const { content, handleClosePopUp } = props;
-
-  const [signUpState, setSignUpState] = useState<"default" | "success">(
-    "default"
-  );
-
-  const handleJoinBtnClick = () => {
-    setSignUpState("success");
-  };
-
-  const defaultState = (
-    <div className="state">
-      <h2 className="title" dangerouslySetInnerHTML={{ __html: content?.defaultState.title ?? '' }} />
-      <p className="description">{content?.defaultState.description}</p>
-      <label htmlFor="email">
-        <input
-          placeholder="Your Email"
-          type="email"
-          id="email"
-          required
-        ></input>
-        <JoinBtn handleClick={handleJoinBtnClick} />
-      </label>
-      <p className="note">{content?.defaultState.note}{' '}<u>Privacy Policy</u></p>
-    </div >
-  );
-
-  const succesState = (
-    <div className="state">
-      <div className="icon" />
-      <h2 className="title success">{content?.successState?.title}</h2>
-      <p className="description">{content?.successState?.description}</p>
-    </div>
-  );
-
+  const { content } = props;
   return (
     <div className="signUp">
-      <div className="close" onClick={handleClosePopUp} />
-      {signUpState === "default" ? defaultState : succesState}
+      <div className="state">
+        <h2 className="title" dangerouslySetInnerHTML={{ __html: content?.defaultState.title ?? '' }} />
+        <p className="description">{content?.defaultState.description}</p>
+        {/* klaviyo integration starts */}
+        <form id="email_signup" action="https://manage.kmail-lists.com/subscriptions/subscribe?a=TrpaAx&g=VUgtgK" method="POST">
+          <label htmlFor="email"><input
+            type="hidden"
+            name="g"
+            value="VUgtgK"
+          //LIST_ID_HERE 
+          />
+            <input
+              type="email"
+              name="email"
+              id="k_id_email"
+              placeholder="Your email"
+              required />
+            <JoinBtn submit={true} /></label>
+        </form>
+        <p className="note">{content?.defaultState.note}{' '}<u>Privacy Policy</u></p>
+      </div >
     </div>
   );
 }

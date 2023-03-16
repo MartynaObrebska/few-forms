@@ -16,13 +16,6 @@ function App() {
     }
   };
 
-  // Pop up
-  const handleOpenPopUp = () => {
-    setActivePopUp(true);
-  };
-  const handleClosePopUp = () => {
-    setActivePopUp(false);
-  };
   // Scroll
   const handleContactBtn = () => {
     console.log(letsGetInTouchRef)
@@ -40,10 +33,8 @@ function App() {
       <Header />
       <Suspense fallback={<></>}>
         <BottomSection
-          activePopUp={activePopUp}
           productSectionRef={productSectionRef}
           letsGetInTouchRef={letsGetInTouchRef}
-          handleClosePopUp={handleClosePopUp}
         />
       </Suspense>
     </div>

@@ -73,37 +73,10 @@ div.header .down {
     bottom: 21px;
   }
 }
-div.header .down.seeMore {
-  height: 45px;
-  width: 283px;
-  font-size: 16px;
-  border: 2px solid #FEFEFE;
-  border-radius: 22.5px;
-  line-height: 45px;
-  font-weight: 300;
-}
-@media (max-width: 1024px) {
-  div.header .down.seeMore {
-    display: none;
-  }
-}
-div.header .down.seeMore:hover {
-  background-color: #FEFEFE;
-  color: #3A3A3A;
-  font-weight: 500;
-}
 div.header .down.swipe {
   display: none;
   font-size: 16px;
   border: none;
-}
-@media (max-width: 1024px) {
-  div.header .down.swipe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 div.header .down.swipe p {
   margin-bottom: 8px;
@@ -123,25 +96,18 @@ div.header div.signUp {
   right: 100px;
   transform: translateY(-50%);
 }
-@media (max-width: 1240px) {
-  div.header div.signUp {
-    box-sizing: border-box;
-    top: auto;
-    right: auto;
-    bottom: 0;
-    width: 100%;
-    transform: none;
-    border-radius: 10px 10px 0 0;
-  }
-}
-@media (max-width: 1240px) and (max-width: 420px) {
+@media (max-width: 420px) {
   div.header div.signUp {
     left: 0;
   }
 }
 div.header div.signUp h2.title {
   text-align: center;
-  text-align: left;
+}
+@media (max-width: 420px) {
+  div.header div.signUp h2.title {
+    text-align: left;
+  }
 }
 div.header div.signUp div.close {
   display: none;

@@ -1,4 +1,3 @@
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel'
 import MML from '../../assets/mml.webp'
 import Concordia from '../../assets/concordia.webp'
 import './testimonials.css'
@@ -41,22 +40,22 @@ const Testimonials = () => {
   return <div className="testimonials">
     <h2>Architects and Industry<br />professionals on Space System.</h2>
     <Suspense fallback={<></>}>
-      {desktopView ? (
-        <Carousel
-          offset={25}
-          itemWidth={325}
-          draggable
-          slides={slides}
-          plugins={[
-            'arrows', 'fastSwipe', 'infinite',
-            {
-              resolve: slidesToShowPlugin,
-              options: {
-                numberOfSlides: 3
-              }
-            },
-          ]}
-        />
+      {desktopView ? (<></>
+        // <Carousel
+        //   offset={25}
+        //   itemWidth={325}
+        //   draggable
+        //   slides={slides}
+        //   plugins={[
+        //     'arrows', 'fastSwipe', 'infinite',
+        //     {
+        //       resolve: slidesToShowPlugin,
+        //       options: {
+        //         numberOfSlides: 3
+        //       }
+        //     },
+        //   ]}
+        // />
       ) : (
         <CategoriesCarouselMobile
           slides={slides}

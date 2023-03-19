@@ -76,66 +76,33 @@
             height: 100%
             width: 25%
 
-.BrainhubCarousel__container
-    // width: 100%
-    height: 588px
-    +smMaxBreakPoint
-    height: 606px
-    .BrainhubCarousel
-        width: 100%
-        height: 100%
-        position: relative
-    .BrainhubCarousel__arrows
-        position: absolute
-        z-index: 2
-        top: 50%
-        background-color: $black
-        border-radius: 50%
-        &:hover:enabled
-            background-color: $black
-    .BrainhubCarousel__arrowLeft
-        left: 32px
-        right: auto
-    .BrainhubCarousel__arrowRight
-        right: 32px
-        left: auto
-    .BrainhubCarousel__trackContainer
-        // width: 100%
-        height: 100%
+.category
+    height: 586px
+    width: 510px
+    border: 1px solid #BBBBBB
+    border-radius: 10px
+    background-color: #fff
+    margin-right: 20px
+    .picture-container
+        border-radius: 10px 10px 0 0
+                    // width: 510px
+        height: 400px
         overflow: hidden
-        .BrainhubCarousel__track
-            // display: flex
-            // flex-gap: 24px
-        .BrainhubCarouselItem
-            // width: 510px
-            height: 586px
-            border: 1px solid #BBBBBB
-            border-radius: 10px
-            background-color: #fff
-            // margin-right: 20px
-            // display: block
-            .category
-                height: 586px
-            .picture-container
-                border-radius: 10px 10px 0 0
-                // width: 510px
-                height: 400px
-                overflow: hidden
-            img
-                width: 100%
-                height: 100%
-            .bottom-section
-                padding: 24px 28px
-                text-align: left
-                border-radius: 0 0 10px 10px
-            .title
-                margin-bottom: 10px
-                font-family: 'Avenir'
-                font-style: normal
-                font-weight: 900
-                font-size: 36px
-                line-height: 49px
-                letter-spacing: -0.011em
+        img
+            width: 100%
+            height: 100%
+    .bottom-section
+        padding: 24px 28px
+        text-align: left
+        border-radius: 0 0 10px 10px
+        .title
+            margin-bottom: 10px
+            font-family: 'Avenir'
+            font-style: normal
+            font-weight: 900
+            font-size: 36px
+            line-height: 49px
+            letter-spacing: -0.011em
             .description
                 font-family: 'Avenir'
                 font-style: normal

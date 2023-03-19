@@ -34,7 +34,7 @@ const ProductCarousel = () => {
 
   return <div className="product-categories">
     <div className="product-categories-content">
-      <h2>Rethinking the way we manufacture, design, buy, use furniture.</h2>
+      <h2>Rethinking the way we manufacture,<br />design, buy, use furniture.</h2>
 
       <Suspense fallback={<></>}>
         {desktopView ? (

@@ -15,10 +15,15 @@ function CategoriesCarouselDesktop(props: Props) {
       draggable
       slides={props.slides}
       plugins={[
-        'centered', 'arrows', 'fastSwipe', 'infinite',
+        'infinite',
+        'fastSwipe',
+        'arrows',
         {
-          resolve: slidesToShowPlugin
-        }
+          resolve: slidesToShowPlugin,
+          options: {
+            numberOfSlides: 2
+          }
+        },
       ]}
     />
   );

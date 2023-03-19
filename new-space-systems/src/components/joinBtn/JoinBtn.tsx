@@ -8,7 +8,7 @@ interface Props {
 function JoinBtn(props: Props) {
   return (
     <button className="joinBtn" onClick={props?.handleClick} type={props.submit ? 'submit' : undefined}>
-      Subscribe
+      <div>Subscribe</div>
     </button>
   );
 }

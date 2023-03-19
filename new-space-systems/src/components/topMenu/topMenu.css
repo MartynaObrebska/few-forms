@@ -72,7 +72,6 @@ div.topMenu div.topMenuContainer div.home p.spaceSystem {
 }
 div.topMenu div.topMenuContainer div.buttons {
   position: absolute;
-  top: 7px;
   right: 30px;
   display: flex;
 }
@@ -86,6 +85,15 @@ div.topMenu div.topMenuContainer div.buttons {
 }
 div.topMenu div.topMenuContainer div.buttons button {
   margin-left: 18px;
+}
+div.topMenu div.topMenuContainer div.buttons button div {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.011em;
 }
 div.topMenu.disabled {
   top: -60px;

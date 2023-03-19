@@ -5,7 +5,7 @@ interface Props {
 }
 const ContactBtn = (props: Props) => {
   return <button className="contact-button" onClick={props.handleClick}>
-    Contact us
+    <div>Contact us</div>
   </button>
 }
 

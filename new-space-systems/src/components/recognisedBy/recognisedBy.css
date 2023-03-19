@@ -40,7 +40,9 @@
   flex-grow: 1;
   height: 32px;
   padding: 24px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 420px) {
   .recognised-by .recognised-by-columns .recognised-by-column {
@@ -51,10 +53,6 @@
   }
 }
 .recognised-by .recognised-by-columns .recognised-by-column img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 100%;
   height: auto;
 }/*# sourceMappingURL=recognisedBy.css.map */

@@ -25,7 +25,7 @@ const LetsGetInTouch = (props: { letsGetInTouchRef: React.MutableRefObject<HTMLD
             </div>
           </div>
         </div>
-        <a className="send-message" href="mailto:takeme@there.com" target="_blank">
+        <a className="send-message" href="mailto:hello@fewforms.com" target="_blank">
           <img src={Mail} alt="mail-icon" />
           Send a message
         </a>

@@ -11,7 +11,7 @@ function Header(props: Props) {
       title: "Available soon. Join the waitlist!",
       description:
         "The custom-fit furniture changing with you is almost here! Sign up for our product waitlist now to be the first to know when it becomes available. We'll send you a notification as soon as it's ready for purchase.",
-      note: `Common table is made of natural solid`,
+      note: 'Common table is made of natural solid',
     },
     successState: {
       title: "You have joined the waitlist!",

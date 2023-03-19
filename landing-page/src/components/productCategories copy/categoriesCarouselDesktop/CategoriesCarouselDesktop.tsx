@@ -89,6 +89,7 @@ function CategoriesCarouselDesktop(props: Props) {
       id={part}
       className="slider-button"
       onClick={handleSliderButtonClick}
+      aria-label={`Category-${part}`}
     />
   ));
 

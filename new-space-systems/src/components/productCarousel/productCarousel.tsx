@@ -19,14 +19,15 @@ const ProductCarousel = () => {
 
   const slides = categories.map((category, index) => (
     <div key={index} className="category">
-      <div className="picture-container">
-        <img src={category.image} />
+      <div className='container'>
+        <div className="picture-container">
+          <img style={{ userSelect: 'none' }} src={category.image} />
+        </div>
+        <div className="bottom-section">
+          <div className="title">{category.title}</div>
+          <div className="description">{category.description}</div>
+        </div>
       </div>
-      <div className="bottom-section">
-        <div className="title">{category.title}</div>
-        <div className="description">{category.description}</div>
-      </div>
-
     </div>
   ));
 

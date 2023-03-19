@@ -17,8 +17,8 @@ function CategoriesCarouselDesktop(props: Props) {
         position: 'relative',
       }
     }}
-    preventScrollOnSwipe
-    swipeTreshold={60}
+    swipeTreshold={20}
+    infinite={false}
     forwardBtnProps={{
       children: <img src={Arrow} alt="arrow-next" />,
       style: {
@@ -30,7 +30,7 @@ function CategoriesCarouselDesktop(props: Props) {
         position: 'absolute',
         zIndex: 2,
         top: 'calc(50% - 17.5px)',
-        right: '16px',
+        right: '28px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -48,21 +48,19 @@ function CategoriesCarouselDesktop(props: Props) {
         position: 'absolute',
         zIndex: 2,
         top: 'calc(50% - 17.5px)',
-        left: '16px',
+        left: '28px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         paddingLeft: '2px'
       }
     }}
-    // itemsToShow={3}
     speed={400}
     activeSlideIndex={activeSlide}
     onRequestChange={setActiveSlide}
     itemsListProps={{
       style: {
         position: 'relative',
-        gap: '20px'
       }
     }}
   >

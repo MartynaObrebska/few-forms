@@ -14,20 +14,25 @@
                 +container(295px, 0,#F3F2EE, 5px)
                 margin: 0 auto
                 border-radius: 10px
+                .container
+                    height: 602px
+                    border: none
+                    border-radius: 10px
+                    margin-right: 0
                 .picture-container
-                    height: 405px
+                    height: 365px
                     overflow: hidden
                     position: relative
                     border-radius: 10px 10px 0 0
+                    display: flex
+                    justify-content: center
+                    align-content: center
                     img
-                        height: 100%
                         width: auto
-                        top: 50%
-                        left: 50%
-                        position: absolute
-                        transform: translate(-50%,-50%)
+                        height: 100%
+                        object-fit: cover
                 .bottom-section
-                    height: 206px
+                    height: 238px
                     font-size: 30px
                     line-height: 118px
                     color: $light-white

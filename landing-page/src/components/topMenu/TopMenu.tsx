@@ -21,7 +21,7 @@ function TopMenu(props: Props) {
     if (activePopUp) setActiveTopMenu(true);
     const handleScroll = () => {
       const verticalScrollValue = window.scrollY;
-      if (verticalScrollValue <= 0) setActiveTopMenu(true);
+      if (verticalScrollValue <= 60) return setActiveTopMenu(true);
       setActiveTopMenu(verticalScrollValue <= scrollValue);
       setScrollValue(verticalScrollValue);
     };

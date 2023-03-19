@@ -8,6 +8,8 @@
     +lgMaxBreakPoint
         height: 200px
         +flex(column, space-around, flex-start)
+        background-color: $light-white
+        border-color: $light-grey
     .serviceBarItem
         +flex
         +lgMaxBreakPoint
@@ -31,38 +33,39 @@
                 position: relative
                 +bg-image(18px, 18px, '../../assets/info_icon.svg')
                 opacity: 0.6
+                cursor: pointer
                 +smMaxBreakPoint
                     position: static
                 .tooltip
-                    +container(325px, 22px 20px, $light-grey, 2px)
+                    +container(285px, 22px 20px, $light-grey, 2px)
                     border: none
                     visibility: hidden
                     position: absolute
                     z-index: 1
                     top: calc(100% + 32px)
-                    left: -150px
+                    left: calc(50% - 162.5px)
                     font-size: 15px
-                    line-height: 20px
+                    font-weight: 300
+                    line-height: 20.49px
                     text-align: left
-                    +smMaxBreakPoint
-                        top: 100%
-                        left: 50%
-                        transform: translateX(-50%)
-                    &::after
-                        content: " "
+                    +lgMaxBreakPoint
+                        width: 256px
+                        left: calc(50% - 148px)
+                        +smMaxBreakPoint
+                            top: 100%
+                            left: 0
+                            right: 0
+                            width: auto
+                    &-arrow
                         position: absolute
                         bottom: 100%
-                        left: 160px
+                        left: 50%
                         margin-left: -22px
                         border-width: 22px
                         border-style: solid
                         border-color: transparent transparent $light-grey transparent
-                        +smMaxBreakPoint
-                            border: none
-
                 &:hover
                     opacity: 1
-                    cursor: pointer
                     .tooltip
                         visibility: visible
         p

@@ -47,6 +47,28 @@ button:disabled {
   color: #3A3A3A;
 }
 
+.slider-root {
+  height: 126px;
+  padding: 60px;
+  box-sizing: border-box;
+}
+.slider-root .slider-container {
+  margin: 0 auto;
+  width: 325px;
+  height: 6px;
+  background: #EBEBEB;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.slider-root .slider {
+  position: absolute;
+  width: 65px;
+  height: 6px;
+  background: #3A3A3A;
+  border-radius: 40px;
+}
+
 /********************************************
 	BREAKPOINT WIDTHS
 ********************************************/

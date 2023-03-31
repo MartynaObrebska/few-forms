@@ -4,11 +4,12 @@ import image3 from '../../assets/machine.webp'
 import image4 from '../../assets/drawer.webp'
 import image5 from '../../assets/phone-screen2.webp'
 import './productCarousel.css'
-import { useState, useCallback, useEffect, Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 import CategoriesCarouselDesktop from './categoriesCarouselDesktop/CategoriesCarouselDesktop';
 import CategoriesCarouselMobile from './categoriesCarouselMobile/CategoriesCarouselMobile';
 
 const ProductCarousel = () => {
+  const categoriesContentRef = useRef<HTMLDivElement | null>(null)
   const categories = [
     { image: image1, title: "Stress-free experience.", description: 'Designed online in less than 1 hour, delivered within 1 week, assembled easily with 1 tool.' },
     { image: image2, title: "No design skills required.", description: 'Design recommendations based on your needs, not your design skills and powered by algorithms. ' },
@@ -34,12 +35,12 @@ const ProductCarousel = () => {
   const desktopView = document.body.clientWidth > 1024;
 
   return <div className="product-categories">
-    <div className="product-categories-content">
+    <div ref={categoriesContentRef} className="product-categories-content">
       <h2>Rethinking the way we manufacture,<br />design, buy, use furniture.</h2>
 
       <Suspense fallback={<></>}>
         {desktopView ? (
-          <CategoriesCarouselDesktop slides={slides} />
+          <CategoriesCarouselDesktop categoriesContentRef={categoriesContentRef} slides={slides} />
         ) : (
           <CategoriesCarouselMobile
             slides={slides}

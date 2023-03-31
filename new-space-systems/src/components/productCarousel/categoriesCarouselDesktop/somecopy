@@ -10,7 +10,6 @@ function CategoriesCarouselDesktop(props: Props) {
   const { slides, categoriesContentRef } = props
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [sliderLeft, setSliderLeft] = useState(0)
   const sliderRef = useRef<HTMLDivElement | null>(null)
   const sliderContainerRef = useRef<HTMLDivElement | null>(null)
   const sliderWidth = 325
@@ -28,7 +27,8 @@ function CategoriesCarouselDesktop(props: Props) {
       sliderRef.current.style.left = `${newLeft}px`
       const newTransitionForContainer = newLeft * (listContainerWidth - categoriesContentWidth) / maxLeft
       listContainerElement.style.transform = `translateX(-${newTransitionForContainer}px)`
-
+      
+      activeSlide = parseFloat((newLeft * 4 / maxLeft).toFixed())
     }
   }
 
@@ -38,18 +38,9 @@ function CategoriesCarouselDesktop(props: Props) {
     sliderContainerRef.current?.addEventListener('mousemove', move)
   }
   const remove = () => {
-    console.log('called')
-    const listContainerElement = (document.getElementsByClassName('items-list-container') as HTMLCollectionOf<HTMLElement>)[0]
-    const categoriesContentWidth = categoriesContentRef.current?.getBoundingClientRect().width
-    if (sliderRef.current && listContainerElement && categoriesContentWidth) {
-      const oldLeft = parseFloat(sliderRef.current.style.left)
-      const newLeft = oldLeft * 4 / maxLeft
-      sliderRef.current.style.left = `${newLeft}px`
-      setActiveSlideIndex(parseFloat((newLeft * 4 / maxLeft).toFixed()))
-    }
     sliderContainerRef.current?.removeEventListener('mousemove', move)
   }
-  const getSliderLeft = () => {
+  const setSliderLeft = () => {
     const listContainerElement = document.querySelector('.items-list-container')
     const categoriesContentWidth = categoriesContentRef.current?.getBoundingClientRect().width
     const sliderElement = sliderRef.current
@@ -118,7 +109,7 @@ function CategoriesCarouselDesktop(props: Props) {
       }}
       speed={400}
       activeSlideIndex={activeSlideIndex}
-      onAfterChange={getSliderLeft}
+      onAfterChange={setSliderLeft}
       onRequestChange={setActiveSlideIndex}
       itemsListProps={{
         className: 'items-list-container',

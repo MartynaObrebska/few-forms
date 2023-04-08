@@ -1,5 +1,5 @@
 import MML from '../../assets/mml.webp'
-import Concordia from '../../assets/concordia.png'
+import Concordia from '../../assets/concordia.webp'
 import './testimonials.css'
 import Arrow from '../../assets/arrow.svg'
 import { Suspense, useState } from 'react'

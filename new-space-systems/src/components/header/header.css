@@ -82,14 +82,6 @@ div.header .down.swipe p {
   margin-bottom: 8px;
   line-height: 20.49px;
 }
-div.header .down.swipe .arrow {
-  height: 9px;
-  width: 18px;
-  background-image: url("../../assets/Arrow-down-white.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
 div.header div.signUp {
   top: calc(50% - 30px);
   left: auto;

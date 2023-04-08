@@ -25,15 +25,6 @@ div.signUp .state {
   align-items: stretch;
   text-align: left;
 }
-div.signUp .state div.icon {
-  height: 58px;
-  width: 58px;
-  background-image: url("../../assets/status_icon.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  margin: 30px auto 20px;
-}
 div.signUp .state h2.title {
   margin: 0;
   font-size: 36px;
@@ -132,20 +123,4 @@ div.signUp .state p.note {
 div.signUp .state p.note span {
   text-decoration: underline;
   cursor: pointer;
-}
-div.signUp div.close {
-  height: 32px;
-  width: 32px;
-  background-image: url("../../assets/close.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  opacity: 0.4;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-div.signUp div.close:hover {
-  opacity: 1;
 }/*# sourceMappingURL=signUp.css.map */

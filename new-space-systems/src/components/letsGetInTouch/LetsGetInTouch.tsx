@@ -19,13 +19,13 @@ const LetsGetInTouch = (props: { letsGetInTouchRef: React.MutableRefObject<HTMLD
             <div className="ceo-name">Bartosz Bykowski</div>
             <div className="ceo-title">Founder</div>
             <div className="social-icons">
-              <a className="linked-in" href='https://www.linkedin.com/company/few-products/' target='_blank'>
+              <a className="linked-in" href='https://www.linkedin.com/in/bartosz-bykowski-27127286/' target='_blank'>
                 <img src={LinkedIn} alt="linked-in-logo" />
               </a>
             </div>
           </div>
         </div>
-        <a className="send-message" href="mailto:hello@fewforms.com" target="_blank">
+        <a className="send-message" href="mailto:b.bykowski@fewforms.com" target="_blank">
           <img src={Mail} alt="mail-icon" />
           Send a message
         </a>

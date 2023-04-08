@@ -10,7 +10,7 @@ div.header {
 }
 @media (max-width: 420px) {
   div.header {
-    height: 98vh;
+    height: 945px;
     width: 100%;
     background-image: url("../../assets/mobile-header.webp");
     background-repeat: no-repeat;

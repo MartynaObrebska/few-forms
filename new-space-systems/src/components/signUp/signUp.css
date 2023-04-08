@@ -58,41 +58,65 @@ div.signUp .state p.description {
     font-size: 16px;
   }
 }
-div.signUp .state label {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 0px 0px 22px;
+div.signUp .state form {
+  position: relative;
+}
+div.signUp .state form label {
+  padding: 0;
   margin-bottom: 30px;
-  gap: 10px;
   height: 45px;
-  background: #FEFEFE;
-  border: 1px solid #BBBBBB;
-  border-radius: 62px;
 }
 @media (max-width: 420px) {
-  div.signUp .state label {
+  div.signUp .state form label {
     box-sizing: border-box;
     width: 325px;
   }
 }
-div.signUp .state label input {
+div.signUp .state form label input {
+  box-sizing: border-box;
+  background: #FEFEFE;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid #BBBBBB;
+  border-radius: 62px;
+  box-sizing: border-box;
   width: 100%;
-  border: none;
-  padding: 4px 0 0 0;
+  padding: 4px 0 0 22px;
   background: transparent;
-  line-height: normal;
+  margin-bottom: 30px;
 }
-div.signUp .state label span {
-  color: #F26313;
+div.signUp .state form label input:hover, div.signUp .state form label input:active, div.signUp .state form label input:focus {
+  border-color: #3A3A3A;
 }
-div.signUp .state button.joinBtn {
-  margin: 15px 0;
+div.signUp .state form label input:active::-moz-placeholder, div.signUp .state form label input:focus::-moz-placeholder {
+  color: #3A3A3A;
+}
+div.signUp .state form label input:active::placeholder, div.signUp .state form label input:focus::placeholder {
+  color: #3A3A3A;
+}
+div.signUp .state form label input::-moz-placeholder {
+  transform: translateY(1px);
+  opacity: 1;
+}
+div.signUp .state form label input::placeholder {
+  transform: translateY(1px);
+  opacity: 1;
+}
+div.signUp .state form label input:-ms-input-placeholder {
+  color: red;
+}
+div.signUp .state form label input::-ms-input-placeholder {
+  color: red;
+}
+div.signUp .state form label button.joinBtn {
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 0;
   width: auto;
 }
 @media (max-width: 420px) {
-  div.signUp .state button.joinBtn {
+  div.signUp .state form label {
     width: 122px;
   }
 }

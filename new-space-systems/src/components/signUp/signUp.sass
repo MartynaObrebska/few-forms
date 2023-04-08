@@ -30,34 +30,49 @@ div.signUp
             padding: 0 10px 30px 0
             +smMaxBreakPoint
                 font-size: 16px
-        label
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            align-items: center
-            padding: 0px 0px 0px 22px
-            margin-bottom: 30px
-            gap: 10px
-            height: 45px
-            background: #FEFEFE
-            border: 1px solid #BBBBBB
-            border-radius: 62px
-            +smMaxBreakPoint
-                box-sizing: border-box
-                width: 325px
-            input
-                width: 100%
-                border: none
-                padding: 4px 0 0 0
-                background: transparent
-                line-height: normal
-            span
-                color: $red
-        button.joinBtn
-            margin: 15px 0
-            width: auto
-            +smMaxBreakPoint
-                width: 122px
+        form
+            position: relative
+            label
+                padding: 0
+                margin-bottom: 30px
+                height: 45px
+                +smMaxBreakPoint
+                    box-sizing: border-box
+                    width: 325px
+                input
+                    box-sizing: border-box
+                    background: #FEFEFE
+                    height: 45px
+                    line-height: 45px
+                    border: 1px solid #BBBBBB
+                    border-radius: 62px
+                    box-sizing: border-box
+                    width: 100%
+                    padding: 4px 0 0 22px
+                    background: transparent
+                    margin-bottom: 30px 
+                    &:hover, &:active, &:focus
+                        border-color: #3A3A3A
+                    &:active::placeholder, &:focus::placeholder
+                        color: #3A3A3A
+                    &::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        transform: translateY(1px)
+                        opacity: 1 /* Firefox */
+
+                    &:-ms-input-placeholder /* Internet Explorer 10-11 */
+                        color: red
+
+                    &::-ms-input-placeholder /* Microsoft Edge */
+                        color: red
+                button.joinBtn
+                    top: 0
+                    right: 0
+                    position: absolute
+                    margin: 0
+                    width: auto
+                +smMaxBreakPoint
+                    width: 122px
+
         p.note
             font-family: 'Avenir'
             font-style: normal
